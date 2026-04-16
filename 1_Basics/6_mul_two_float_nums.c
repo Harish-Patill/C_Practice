@@ -9,12 +9,7 @@ int main(){
 
     float ans=num1 * num2;
 
-    printf("The product of %f and %f is : %f",num1,num2,ans);
-
-
-
-
-
+    printf("The product of %f and %f is : %f\n",num1,num2,ans);
 
     return 0;
 }
