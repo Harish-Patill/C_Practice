@@ -21,3 +21,6 @@ Write a C program to check if an array is a palindrome.
 Write a C program to perform selection sort.
 Write a C program to perform bubble sort.
 -----------------------------------------------------------------------------------------------------------------------------------------
+3. Pointers
+WAP to Declare a pointer, assign it an address, and print the address and value.
+WAP to Show that & gives address and * gives the value at that address.
