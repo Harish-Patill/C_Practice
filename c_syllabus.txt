@@ -1,0 +1,41 @@
+C-PROGRAMMING SYLLABUS
+======================
+
+BASICS
+data types
+variable declaration and initialization
+signed and unsigned
+type promotion, demotion and casting
+type conversion - implicit and explicit
+
+OPERATORS
+arithmetic operations
+relational operations
+logical operations
+pre increment and decrement
+post increment and decrement
+ternary operators
+
+CONTROL FLOW
+if loop
+switch case
+for loop
+while loop
+do while loop
+nested for loop
+patterns
+
+ARRAYS & SORTING
+array
+bubble sort
+selection sort
+
+FUNCTIONS
+functions
+function recursion
+static local variable
+
+MEMORY & POINTERS
+memory segments (user space, kernel space, code segment, data segment, heap, stack)
+pointers - address, referencing and dereferencing
+endianness of a machine

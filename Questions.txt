@@ -10,6 +10,12 @@ Write a C program to check whether a number is even or odd.
 Write a C program to find the last digit of a number.
 Write a C program to remove the last digit of a number.
 Write a C program to count the number of digits in a number.
+Write a C program to print ASCII Value of a Character in C.
+Write a C program to swap two numbers.
+Write a C program to Convert Fahrenheit To Celsius.
+Write a C program to Find the Size of int, float, double and char.
+Write a C program to print prime numbers till N.
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 2. Arrays
 Write a C program to read and write array elements.
