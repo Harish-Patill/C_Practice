@@ -10,14 +10,14 @@ int main(){
         scanf("%d",&arr[i]);
     }
     
-    //array sorting here: 
+    //array swap here: 
     for(int i=0;i<size/2;i++){
         temporary=arr[i];
         arr[i]=arr[size-1-i];
         arr[size-1-i]=temporary;
     }
     
-    printf("The array elements in the reversre order: ");
+    printf("The array elements in the reverse order: ");
     for(int i=0;i<size;i++){
         printf("%d ",arr[i]);
     }
