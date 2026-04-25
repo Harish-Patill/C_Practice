@@ -15,7 +15,6 @@ Write a C program to swap two numbers.
 Write a C program to Convert Fahrenheit To Celsius.
 Write a C program to Find the Size of int, float, double and char.
 Write a C program to print prime numbers till N.
-
 -----------------------------------------------------------------------------------------------------------------------------------------
 2. Arrays
 Write a C program to read and write array elements.
@@ -30,3 +29,17 @@ Write a C program to perform bubble sort.
 3. Pointers
 WAP to Declare a pointer, assign it an address, and print the address and value.
 WAP to Show that & gives address and * gives the value at that address.
+-----------------------------------------------------------------------------------------------------------------------------------------
+4. Function Recrusion
+
+01-WAP to print from 1 to 5
+02-WAP to print from 5 to 1
+03-WAP to find the sum of the first n Natural numbers.
+04-WAP to find the factorial of a number.
+05-WAP to find 2^x.
+06-WAP to find x^y.
+07-WAP to find the sum of the digits of entered number.
+08-WAP to count the digits in a number.
+09-WAP to print an array.
+10-WAP to reverse an array.
+-----------------------------------------------------------------------------------------------------------------------------------------
