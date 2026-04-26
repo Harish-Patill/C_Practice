@@ -25,7 +25,7 @@ Structured C programming practice in organized order.
 
 ## How to Run
 
-Install GCC Compiler:
+Install GCC Compiler from [here](https://sourceforge.net/projects/gcc-win64/) and to verify run:
 
 ```bash
 gcc --version
