@@ -19,5 +19,6 @@ int main(){
     else
         printf("Not an Armstrong number\n");
 
+        
     return 0;
 }
