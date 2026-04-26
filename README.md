@@ -25,13 +25,13 @@ Structured C programming by me in organized order.
 
 ## How to Run
 
-Make sure you have GCC installed:
+Installed GCC Compiler:
 
 ```bash
 gcc --version
 ```
 
-To compile and run any `.c` file:
+Save the file with `.c` extension and:
 
 ```bash
 gcc filename.c -o output
