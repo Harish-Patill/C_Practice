@@ -1,6 +1,6 @@
 # C Practice
 
-Structured C programming practice in organized order.
+Just me doing my C programming and Github practice.
 
 ---
 
