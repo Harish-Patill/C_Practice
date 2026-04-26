@@ -1,6 +1,6 @@
 # C Practice
 
-Just me doing my C programming and Github practice.
+Just me doing my C Programming and Github practice in this repo.
 
 ---
 
