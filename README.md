@@ -1,31 +1,31 @@
 # C Practice
 
-Structured C programming by me in organized order.
+Structured C programming practice in organized order.
 
 ---
 
 ## 📁 Folder Structure
 
-| Folder | Topic |
-|--------|-------|
-| [1_Basics](./1_Basics/) | Basics |
-| [2_If_else_Condition](./2_If_else_Condition/) | If-Else |
-| [3_If_Else-if_Condition](./3_If_Else-if_Condition/) | If-Else-If |
-| [4_Nested_If](./4_Nested_If/) | Nested If |
-| [5_Switch_Case](./5_Switch_Case/) | Switch Case |
-| 6_Loops | Loops |
-| 7_Break_Continue | Break & Continue |
-| [8_Arrays](./8_Arrays/) | Arrays |
-| 9_Functions | Functions |
-| [10_Pointers](./10_Pointers/) | Pointers |
-| [11_Function_Recursion](./11_Function_Recursion/) | Functions & Recursion |
-| 12_Strings | Strings |
+| Folder |
+|--------|
+| [1_Basics](./1_Basics/)
+| [2_If_else_Condition](./2_If_else_Condition/) 
+| [3_If_Else-if_Condition](./3_If_Else-if_Condition/)
+| [4_Nested_If](./4_Nested_If/)
+| [5_Switch_Case](./5_Switch_Case/)
+| [6_Loops]
+| [7_Break_Continue]
+| [8_Arrays](./8_Arrays/)
+| [9_Functions]
+| [10_Pointers](./10_Pointers/)
+| [11_Function_Recursion](./11_Function_Recursion/)
+| [12_Strings]
 
 ---
 
 ## How to Run
 
-Installed GCC Compiler:
+Install GCC Compiler:
 
 ```bash
 gcc --version
@@ -40,7 +40,7 @@ gcc filename.c -o output
 
 ---
 
-## Compiler and Operating system
+## My Compiler and Operating system
 
 - GCC compiler
 - Linux-Ubuntu and Windows 11
