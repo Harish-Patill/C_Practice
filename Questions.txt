@@ -48,8 +48,13 @@
 -----------------------------------------------------------------------------------------------------------------------------------------
 5. Switch Case
 
+01-WAP to perform a calculator operation on two numbers using switch (addition, subtraction, multiplication, division).
+02-WAP to print the day of the week based on a number (1–7) using switch.
+03-WAP to print the name of the month based on a number (1–12) using switch.
+04-WAP to find the number of days in a month using switch (include leap year condition for February).
+05-WAP to calculate the area of circle, rectangle, and triangle using a menu-driven program (switch case).
 -----------------------------------------------------------------------------------------------------------------------------------------
-6. 
+6. Loops
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 7. 
