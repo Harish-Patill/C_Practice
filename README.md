@@ -28,6 +28,6 @@ gcc filename.c -o output
 
 ---
 
-## Author
+#### Author
 
 **Harish Patil** — [GitHub](https://github.com/Harish-Patill)
