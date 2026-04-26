@@ -1,21 +1,20 @@
 1. Basics
 
-Write a C program to print "Hello World".
-Write a C program to print your name (taken from user input).
-Write a C program to print a mobile number without taking input.
-Write a C program to add two numbers without using constants directly (likely via input).
-Write a C program to print whether a number is odd or even.
-Write a C program to multiply two floating-point numbers.
-Write a C program to find the remainder of two numbers.
-Write a C program to check whether a number is even or odd.
-Write a C program to find the last digit of a number.
-Write a C program to remove the last digit of a number.
-Write a C program to count the number of digits in a number.
-Write a C program to print ASCII Value of a Character in C.
-Write a C program to swap two numbers.
-Write a C program to Convert Fahrenheit To Celsius.
-Write a C program to Find the Size of int, float, double and char.
-Write a C program to print prime numbers till N.
+01-Write a C program to print "Hello World".
+02-Write a C program to print your name (taken from user input).
+03-Write a C program to print a mobile number without taking input.
+04-Write a C program to add two numbers without using constants directly (likely via input).
+05-Write a C program to print whether a number is odd or even.
+06-Write a C program to multiply two floating-point numbers.
+07-Write a C program to find the remainder of two numbers.
+08-Write a C program to check whether a number is even or odd.
+09-Write a C program to find the last digit of a number.
+10-Write a C program to remove the last digit of a number.
+11-Write a C program to count the number of digits in a number.12-Write a C program to print ASCII Value of a Character in C.
+12-Write a C program to swap two numbers.
+13-Write a C program to Convert Fahrenheit To Celsius.
+14-Write a C program to Find the Size of int, float, double and char.
+15-Write a C program to print prime numbers till N.
 -----------------------------------------------------------------------------------------------------------------------------------------
 2. If-Else Condition
 
@@ -23,6 +22,11 @@ Write a C program to print prime numbers till N.
 02-WAP to check whether a given number is positive or negative.
 03-WAP to check whether a number is even or odd.
 04-WAP to check whether a number lies within a given range.
+05-WAP to check whether a triangle is valid given three sides.
+06-WAP to determine the type of triangle (equilateral, isosceles, scalene).
+07-WAP to check whether a given year is a leap year.
+08-WAP to check if a number is divisible by 2, 3, 5 or none and print all applicable cases.
+09-WAP to find the absolute value of a number.
 -----------------------------------------------------------------------------------------------------------------------------------------
 3. If-Else-If Condition
 
@@ -30,6 +34,12 @@ Write a C program to print prime numbers till N.
 02-WAP to display greeting messages based on time input:
 03-WAP to find the largest of three numbers using if-else-if ladder.
 04-WAP to check whether a given character is an alphabet or a digit.
+05-WAP to determine the type of triangle (equilateral, isosceles, scalene).
+06-WAP to check if a number is divisible by 2, 3, 5 or none and print all applicable cases.
+07-WAP to calculate BMI and categorize it as underweight, normal, overweight, or obese.
+08-WAP to calculate electricity bill based on different usage slabs.
+09-WAP to check whether a number is an Armstrong number (3-digit).
+10-WAP to check whether a number is an Armstrong number for varying number of digits.
 -----------------------------------------------------------------------------------------------------------------------------------------
 4. Nested if
 
@@ -45,14 +55,14 @@ Write a C program to print prime numbers till N.
 -----------------------------------------------------------------------------------------------------------------------------------------
 8. Arrays
 
-Write a C program to read and write array elements.
-Write a C program to find the sum and average of array elements.
-Write a C program to find the minimum and maximum in an array.
-Write a C program to separate even and odd numbers in an array.
-Write a C program to reverse an array.
-Write a C program to check if an array is a palindrome.
-Write a C program to perform selection sort.
-Write a C program to perform bubble sort.
+1-Write a C program to read and write array elements.
+1-Write a C program to find the sum and average of array elements.
+1-Write a C program to find the minimum and maximum in an array.
+1-Write a C program to separate even and odd numbers in an array.
+1-Write a C program to reverse an array.
+1-Write a C program to check if an array is a palindrome.
+1-Write a C program to perform selection sort.
+1-Write a C program to perform bubble sort.
 -----------------------------------------------------------------------------------------------------------------------------------------
 9. 
 
