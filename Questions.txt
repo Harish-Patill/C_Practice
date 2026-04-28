@@ -91,3 +91,14 @@ WAP to Show that & gives address and * gives the value at that address.
 09-WAP to print an array.
 10-WAP to reverse an array.
 -----------------------------------------------------------------------------------------------------------------------------------------
+12. Strings
+
+01-WAP to find the length of a user-entered string.
+02-WAP to reverse a given string.
+03-WAP to check whether a specific character is present in a string or not.
+04-WAP to count the number of occurrences of a character in a string.
+05-WAP to count the number of vowels in a string.
+06-WAP to count the number of uppercase letters, lowercase letters, and digits in a string.
+07-WAP to find the weight of a string (sum of ASCII values of characters).
+08-WAP to find the sum of digits present in a string.
+09-WAP to find the first repeated character in a string.
