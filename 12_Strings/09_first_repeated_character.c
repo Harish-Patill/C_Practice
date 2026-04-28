@@ -5,7 +5,7 @@ int main(){
 	scanf("%[^\n]",str);
 
 	for(int i=0;str[i]!='\0';i++){
-		for(int j=0;str[j]!='\0';j++){
+		for(int j=i+1;str[j]!='\0';j++){
 			if(str[i] == str[j]){
 				printf("%c is the first repeated character\n",str[i]);
 				return 0;
