@@ -92,14 +92,14 @@ gcc filename.c -o output
 -----------------------------------------------------------------------------------------------------------------------------------------
 8. Arrays
 
-1-Write a C program to read and write array elements.
-1-Write a C program to find the sum and average of array elements.
-1-Write a C program to find the minimum and maximum in an array.
-1-Write a C program to separate even and odd numbers in an array.
-1-Write a C program to reverse an array.
-1-Write a C program to check if an array is a palindrome.
-1-Write a C program to perform selection sort.
-1-Write a C program to perform bubble sort.
+01-Write a C program to read and write array elements.
+02-Write a C program to find the sum and average of array elements.
+03-Write a C program to find the minimum and maximum in an array.
+04-Write a C program to separate even and odd numbers in an array.
+05-Write a C program to reverse an array.
+06-Write a C program to check if an array is a palindrome.
+07-Write a C program to perform selection sort.
+08-Write a C program to perform bubble sort.
 -----------------------------------------------------------------------------------------------------------------------------------------
 9. 
 
