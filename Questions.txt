@@ -90,6 +90,8 @@ WAP to Show that & gives address and * gives the value at that address.
 08-WAP to count the digits in a number.
 09-WAP to print an array.
 10-WAP to reverse an array.
+11-WAP to find the nth Fibonacci number using recursion.
+12-WAP to calculate the total number of ways to climb stairs when the user can take either 1 or 2 steps at a time.
 -----------------------------------------------------------------------------------------------------------------------------------------
 12. Strings
 
