@@ -24,12 +24,9 @@ gcc filename.c -o output
 
 ### Practice Questions
 
-<details>
-<summary>Click to expand</summary>
-
 <!-- QUESTIONS_START -->
 ```
-1. Basics
+01. Basics
 
 01-Write a C program to print "Hello World".
 02-Write a C program to print your name (taken from user input).
@@ -111,8 +108,8 @@ WAP to Show that & gives address and * gives the value at that address.
 -----------------------------------------------------------------------------------------------------------------------------------------
 11. Function Recrusion
 
-01-WAP to print from 1 to 5
-02-WAP to print from 5 to 1
+01-WAP to print from 01 to 5
+02-WAP to print from 5 to 01
 03-WAP to find the sum of the first n Natural numbers.
 04-WAP to find the factorial of a number.
 05-WAP to find 2^x.
@@ -122,7 +119,7 @@ WAP to Show that & gives address and * gives the value at that address.
 09-WAP to print an array.
 10-WAP to reverse an array.
 11-WAP to find the nth Fibonacci number using recursion.
-12-WAP to calculate the total number of ways to climb stairs when the user can take either 1 or 2 steps at a time.
+12-WAP to calculate the total number of ways to climb stairs when the user can take either 01 or 2 steps at a time.
 -----------------------------------------------------------------------------------------------------------------------------------------
 12. Strings
 
@@ -148,7 +145,6 @@ WAP to Show that & gives address and * gives the value at that address.
 ```
 <!-- QUESTIONS_END -->
 
-</details>
 
 ---
 
