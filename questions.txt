@@ -1,20 +1,21 @@
 1. Basics
 
-01-Write a C program to print "Hello World".
-02-Write a C program to print your name (taken from user input).
-03-Write a C program to print a mobile number without taking input.
-04-Write a C program to add two numbers without using constants directly (likely via input).
-05-Write a C program to print whether a number is odd or even.
-06-Write a C program to multiply two floating-point numbers.
-07-Write a C program to find the remainder of two numbers.
-08-Write a C program to check whether a number is even or odd.
-09-Write a C program to find the last digit of a number.
-10-Write a C program to remove the last digit of a number.
-11-Write a C program to count the number of digits in a number.12-Write a C program to print ASCII Value of a Character in C.
-12-Write a C program to swap two numbers.
-13-Write a C program to Convert Fahrenheit To Celsius.
-14-Write a C program to Find the Size of int, float, double and char.
-15-Write a C program to print prime numbers till N.
+01-WAP to print "Hello World".
+02-WAP to print your name (taken from user input).
+03-WAP to print a mobile number without taking input.
+04-WAP to add two numbers without using constants directly (likely via input).
+05-WAP to print whether a number is odd or even.
+06-WAP to multiply two floating-point numbers.
+07-WAP to find the remainder of two numbers.
+08-WAP to check whether a number is even or odd.
+09-WAP to find the last digit of a number.
+10-WAP to remove the last digit of a number.
+11-WAP to count the number of digits in a number.
+12-WAP to print ASCII Value of a Character in C.
+13-WAP to swap two numbers.
+14-WAP to Convert Fahrenheit To Celsius.
+15-WAP to Find the Size of int, float, double and char.
+16-WAP to print prime numbers till N.
 -----------------------------------------------------------------------------------------------------------------------------------------
 2. If-Else Condition
 
@@ -61,14 +62,14 @@
 -----------------------------------------------------------------------------------------------------------------------------------------
 8. Arrays
 
-01-Write a C program to read and write array elements.
-02-Write a C program to find the sum and average of array elements.
-03-Write a C program to find the minimum and maximum in an array.
-04-Write a C program to separate even and odd numbers in an array.
-05-Write a C program to reverse an array.
-06-Write a C program to check if an array is a palindrome.
-07-Write a C program to perform selection sort.
-08-Write a C program to perform bubble sort.
+01-WAP to read and write array elements.
+02-WAP to find the sum and average of array elements.
+03-WAP to find the minimum and maximum in an array.
+04-WAP to separate even and odd numbers in an array.
+05-WAP to reverse an array.
+06-WAP to check if an array is a palindrome.
+07-WAP to perform selection sort.
+08-WAP to perform bubble sort.
 09.
 10.
 -----------------------------------------------------------------------------------------------------------------------------------------
