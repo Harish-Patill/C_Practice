@@ -10,16 +10,16 @@ int main(){
 
     switch(symbol){
         case '+':
-            printf("%d+%d:%d\n",n1,n2,n1+n2);
+            printf("%d+%d=%d\n",n1,n2,n1+n2);
             break;
         case '-':
-            printf("%d-%d:%d\n",n1,n2,n1-n2);
+            printf("%d-%d=%d\n",n1,n2,n1-n2);
             break;
         case '/':
-            printf("%d/%d:%d\n",n1,n2,n1/n2);
+            printf("%d/%d=%d\n",n1,n2,n1/n2);
             break;
         case 'x':
-            printf("%dx%d:%d\n",n1,n2,n1*n2);
+            printf("%dx%d=%d\n",n1,n2,n1*n2);
             break;
         default:
             printf("Invalid Input, try again\n");
