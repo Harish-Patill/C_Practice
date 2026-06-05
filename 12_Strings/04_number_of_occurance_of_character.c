@@ -20,6 +20,11 @@ int main(){
 		}
 	}
 	
-	printf("The occurance of %c in %s is %d\n",ch,name,flag);
+	if(flag == 1){
+		printf("The occurance of %c in %s is %d time\n",ch,name,flag);
+	}
+	else{
+		printf("The occurance of %c in %s is %d times\n",ch,name,flag);
+	}
 	return 0;
 }
