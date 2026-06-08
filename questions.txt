@@ -70,8 +70,10 @@
 06-WAP to check if an array is a palindrome.
 07-WAP to perform selection sort.
 08-WAP to perform bubble sort.
-09.
-10.
+09-WAP to copy one array into another array.
+10-WAP to copy two arrays into a third array.
+11-WAP to compare two arrays.
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 9. 
 
