@@ -101,6 +101,11 @@ gcc filename.c -o output
 09-WAP to copy one array into another array.
 10-WAP to copy two arrays into a third array.
 11-WAP to compare two arrays.
+12-WAP to find the largest element form the array.
+13-WAP to find the smallest element form the array.
+14-WAP to find if a element is present in the array.
+15-WAP to print duplicate elements from two arrays.
+16-WAP to print unique elements from two arrays.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 9. 
