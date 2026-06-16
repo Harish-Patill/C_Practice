@@ -106,6 +106,7 @@ gcc filename.c -o output
 14-WAP to find if a element is present in the array.
 15-WAP to print duplicate elements from two arrays.
 16-WAP to print unique elements from two arrays.
+17-WAP to print the number of even and odd elements from the array.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 9. 
