@@ -12,11 +12,11 @@ int main(){
     scanf("%d",&num);
 
     int ans=digit(num);
-    printf("Sum of all %d elements is %d\n",num,ans);
+    printf("Sum of %d elements is %d\n",num,ans);
     return 0;
 }
 
 // sample output:
 
 // Enter digit :123
-// Sum of all 123 elements is 6
+// Sum of 123 elements is 6
