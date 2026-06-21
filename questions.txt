@@ -59,6 +59,7 @@
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 7. While Loops
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 8. Arrays
 
@@ -86,8 +87,9 @@
 -----------------------------------------------------------------------------------------------------------------------------------------
 10. Pointers
 
-WAP to Declare a pointer, assign it an address, and print the address and value.
-WAP to Show that & gives address and * gives the value at that address.
+01-WAP to Declare a pointer, assign it an address, and print the address and value.
+02-WAP to print the size of different daya types using * operator and sizeof() function.
+03-WAP to Show that & gives address and * gives the value at that address.
 -----------------------------------------------------------------------------------------------------------------------------------------
 11. Function Recrusion
 
