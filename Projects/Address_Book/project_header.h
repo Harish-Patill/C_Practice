@@ -16,3 +16,5 @@ extern struct Contacts contact_details[100];
 extern int contact_count;
 
 void create_contacts(struct Contacts *eptr,int size);
+void edit_contacts(struct Contacts *eptr,int size);
+void list_all(struct Contacts *eptr,int size);

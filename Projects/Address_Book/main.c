@@ -17,6 +17,21 @@ int main(){
                 create_contacts(contact_details,contact_count);
                 break;
             }
+
+            case 2:{
+                edit_contacts(contact_details,contact_count);
+                break;
+            }
+            
+            case 4:{
+                list_all(contact_details,contact_count);
+                break;
+            }
+            case 6:{
+                flag=0;
+                printf("\n\t\t :: Thank You ::\n");
+                break;
+            }
         }
         
 
