@@ -17,8 +17,9 @@ gcc filename.c -o output
 ---
 
 ## My Compiler and Operating system
-- GCC compiler version:     13.3.0
-- Linux-Ubuntu and Windows 11
+- GCC compiler version: 13.3.0
+- Linux-Ubuntu 24.04.4 LTS 
+- Windows 11
 
 ---
 
