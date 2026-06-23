@@ -3,10 +3,10 @@
 /*
 progress so far:
 
-1. Add contacts             : Done with code : Validation remaining
+1. Add contacts             : Validation remaining
 2. Search contacts          : Completed;
-3. Edit contacts            : Done with code : Validation remaining
-4. Delete contacts          :
+3. Edit contacts            : Validation remaining
+4. Delete contacts          : Validation remaining
 5. Display contacts         : Completed;
 6. Save and exit            :
 7. Exit                     : Completed;
@@ -41,6 +41,11 @@ int main(){
                 break;
             }
             
+            case 4:{
+                delete_contact(contact_details,contact_count);
+                break;
+            }
+
             case 5:{
                 list_all(contact_details,contact_count);
                 break;

@@ -30,16 +30,16 @@ void create_contacts(struct Contacts *eptr,int size){
 void edit_contacts(struct Contacts *eptr,int size){
     int name_count=0;
     int edit_flag=0;
-    int user_edit_oinion=0;
-    int sub_user_edit_oinion=0;
+    int user_edit_option=0;
+    int sub_user_edit_option=0;
     char edit_name[50];
     char edit_number[11];
     char edit_email[50];
     
-    printf("\nSeach the Contact you want to edit using any of the below options\n1. Name\n2. Mobile Number\n3. Email-ID\nEnter Here: ");
-    scanf("%d",&user_edit_oinion);
+    printf("\nSeach the Contact you want to edit using any of the below options\n1. Name\n2. Mobile Number\n3. Email-ID\n4. Exit\nEnter Here: ");
+    scanf("%d",&user_edit_option);
     
-    switch(user_edit_oinion){
+    switch(user_edit_option){
     case 1:{
         printf("Enter the Name: ");
         scanf(" %[^\n]",edit_name);
@@ -54,9 +54,9 @@ void edit_contacts(struct Contacts *eptr,int size){
             printf("\nEdit the contact by searching for Mobile Number or Email instead\n");
             
             printf("1. Mobile Number\n2. Email-ID\nSelect any of the above options: ");
-            scanf("%d",&sub_user_edit_oinion);
+            scanf("%d",&sub_user_edit_option);
             
-            switch(sub_user_edit_oinion){
+            switch(sub_user_edit_option){
                 case 1:{
                     printf("Enter the Mobile Number: ");
                     scanf(" %[^\n]",edit_number);
@@ -72,6 +72,10 @@ void edit_contacts(struct Contacts *eptr,int size){
                             
                             printf("Enter Email-ID: ");
                             scanf("%s",eptr[i].email);
+
+                            printf("\nContact Edited Succesfully\n");
+                            printf("Returning to main menu...\n");
+                            sleep(1);
                             
                             edit_flag=1;
                         }
@@ -96,6 +100,10 @@ void edit_contacts(struct Contacts *eptr,int size){
                             printf("Enter Email-ID: ");
                             scanf("%s",eptr[i].email);
                             
+                            printf("\nContact Edited Succesfully\n");
+                            printf("Returning to main menu...\n");
+                            sleep(1);
+                            
                             edit_flag=1;
                         }
                     }
@@ -118,7 +126,10 @@ void edit_contacts(struct Contacts *eptr,int size){
                     
                     printf("Enter Email-ID: ");
                     scanf("%s",eptr[i].email);
-    
+                    printf("\nContact Edited Succesfully\n");
+                    printf("Returning to main menu...\n");
+                    sleep(1);
+                    
                     edit_flag=1;
                 }
             }
@@ -143,7 +154,11 @@ void edit_contacts(struct Contacts *eptr,int size){
                 
                 printf("Enter Email-ID: ");
                 scanf("%s",eptr[i].email);
-                
+
+                printf("\nContact Edited Succesfully\n");
+                printf("Returning to main menu...\n");
+                sleep(1);   
+
                 edit_flag=1;
             }
         }
@@ -167,10 +182,21 @@ void edit_contacts(struct Contacts *eptr,int size){
                 printf("Enter Email-ID: ");
                 scanf("%s",eptr[i].email);
                 
+                printf("\nContact Edited Succesfully\n");
+                printf("Returning to main menu...\n");
+                sleep(1);
+                
                 edit_flag=1;
             }
         }
         if(!edit_flag) printf("Couldn't find any contact with name %s\n",edit_email);
+        break;
+    }
+
+    case 4:{
+        user_edit_option=0;
+        printf("Returning to Main Menu\n");
+        sleep(1);       // 1 second
         break;
     }
 
@@ -188,7 +214,7 @@ void search_contacts(struct Contacts *eptr,int size){
     char search_email[50];
     
 
-    printf("\nSeach the Contact using any of the below options\n1. Name\n2. Mobile Number\n3. Email-ID\nEnter Here: ");
+    printf("\nSeach the Contact using any of the below options\n1. Name\n2. Mobile Number\n3. Email-ID\n4. Exit\nEnter Here: ");
     scanf("%d",&user_search_option);
 
     switch(user_search_option){
@@ -222,8 +248,8 @@ void search_contacts(struct Contacts *eptr,int size){
         }
 
         case 3:{
-            printf("Enter Email-ID");
-            scanf("%[^\n]",search_email);
+            printf("Enter Email-ID :");
+            scanf(" %[^\n]",search_email);
 
             for(int i=0;i<size;i++){
                 if(strcmp(eptr[i].email,search_email) == 0){
@@ -236,8 +262,142 @@ void search_contacts(struct Contacts *eptr,int size){
             break;
         }
 
+        case 4:{
+            user_search_option=0;
+            printf("Returning to Main Menu\n");
+            sleep(1);       // 1 second
+            break;
+        }
+
         default:
             printf("Enter a Valid Input!, Try again\n");
     }
+}
 
+void delete_contact(struct Contacts *eptr,int size){
+    int delete_flag=0;
+    int user_delete_option=0;
+    int index=0;
+    char delete_confirmation;
+    char delete_name[50];
+    char delete_number[11];
+    char delete_email[50];
+    
+
+    printf("\nSeach the Contact you want to delete using any of the below options\n1. Name\n2. Mobile Number\n3. Email-ID\n4. Exit\nEnter Here: ");
+    scanf("%d",&user_delete_option);
+
+    switch(user_delete_option){
+        case 1:{
+            printf("Enter Name: ");
+            scanf(" %[^\n]",delete_name);
+
+            for(int i=0;i<size;i++){
+                if(strcmp(eptr[i].name,delete_name) == 0){
+                    printf("Found Contact : %s %s %s\n",eptr[i].name,eptr[i].number,eptr[i].email);
+                    delete_flag=1;
+                    index=i;
+                    break;
+                }
+            }
+            if(delete_flag){
+                printf("Are you sure you want to delete this contact?\n(Y/n):");
+                scanf(" %c",&delete_confirmation);
+    
+                if(delete_confirmation == 'Y' || delete_confirmation == 'y'){
+                    for(int i=index;i<size-1;i++){
+                        strcpy(eptr[i].name,eptr[i+1].name);
+                        strcpy(eptr[i].number,eptr[i+1].number);
+                        strcpy(eptr[i].email,eptr[i+1].email);
+                    }
+                    printf("\nContact Deleted\n");
+                    printf("Returning to main menu...\n");
+                    sleep(1);
+                    contact_count--;
+                }
+                else printf("Deletion Cancelled\n");
+            }
+            else printf("No contact found with the name '%s'\n",delete_name);
+
+            break;
+        }
+
+        case 2:{
+            printf("Enter the Mobile Number: ");
+            scanf(" %[^\n]",delete_number);
+
+            for(int i=0;i<size;i++){
+                if(strcmp(eptr[i].number,delete_number) == 0){
+                    printf("Found Contact : %s %s %s\n",eptr[i].name,eptr[i].number,eptr[i].email);
+                    delete_flag=1;
+                    index=i;
+                    break;
+                }
+            }
+            if(delete_flag){
+                printf("Are you sure you want to delete this contact?\n(Y/n):");
+                scanf(" %c",&delete_confirmation);
+    
+                if(delete_confirmation == 'Y' || delete_confirmation == 'y'){
+                    for(int i=index;i<size-1;i++){
+                        strcpy(eptr[i].name,eptr[i+1].name);
+                        strcpy(eptr[i].number,eptr[i+1].number);
+                        strcpy(eptr[i].email,eptr[i+1].email);
+                    }
+                    printf("\nContact Deleted\n");
+                    printf("Returning to main menu...\n");
+                    sleep(1);
+                    contact_count--;
+                }
+                else printf("Deletion Cancelled\n");
+            }
+            else printf("No contact found with the Number '%s'\n",delete_number);       
+
+            break;
+        }
+        
+        case 3:{
+            printf("Enter the Mail-ID: ");
+            scanf(" %[^\n]",delete_email);
+    
+            for(int i=0;i<size;i++){
+                if(strcmp(eptr[i].email,delete_email) == 0){
+                    printf("Found Contact : %s %s %s\n",eptr[i].name,eptr[i].number,eptr[i].email);
+                    delete_flag=1;
+                    index=i;
+                    break;
+                }
+            }
+            if(delete_flag){
+                printf("Are you sure you want to delete this contact?\n(Y/n):");
+                scanf(" %c",&delete_confirmation);
+        
+                if(delete_confirmation == 'Y' || delete_confirmation == 'y'){
+                    for(int i=index;i<size-1;i++){
+                        strcpy(eptr[i].name,eptr[i+1].name);
+                        strcpy(eptr[i].number,eptr[i+1].number);
+                        strcpy(eptr[i].email,eptr[i+1].email);
+                    }
+                    printf("\nContact Deleted\n");
+                    printf("Returning to main menu...\n");
+                    sleep(1);
+                    contact_count--;
+                }
+                else printf("Deletion Cancelled\n");
+            }
+            else printf("No contact found with the Mail-ID '%s'\n",delete_email);
+
+            break;     
+        }
+
+        case 4:{
+            user_delete_option=0;
+            printf("Returning to Main Menu\n");
+            sleep(1);       // 1 second
+            break;
+        }
+        
+        default:
+        printf("Enter a Valid Input!, Try again\n");
+    }
 }
