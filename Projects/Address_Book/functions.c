@@ -6,24 +6,143 @@ void list_all(struct Contacts *eptr,int size){
     }
 }
 
-void create_contacts(struct Contacts *eptr,int size){
+
+/*
+Validations:
+    - Name should be only be alphabet
+
+    - Mobile number should be only 10 digits
+    - Mobile number should be only digits
+    - no duplicates
+
+    - @ or . should not be missing
+    - if @ comes after . then invalid email as it contains no domain
+    - length cant be less than 7, as 7 is the lowest an email can be
+    - must end with .com
+    - no duplicates
+*/
+void create_contacts(struct Contacts *eptr,int max_size){
+    int add_contacts_flag=0;
     int add_contacts_loop=1;
+    char add_contacts_user_input;
+    char email_suffix[]=".com";
+    
+    if(contact_count >= max_size){
+        printf("Address Book is Full!\nDelete few Contacts if you want to Continue\n");
+        return;
+    }
     
     while(add_contacts_loop){
         
-        printf("Enter Name: ");
-        scanf(" %[^\n]",eptr[contact_count].name);
+        do{
+            add_contacts_flag=0;
+            printf("\nEnter Name: ");
+            scanf(" %[^\n]",eptr[contact_count].name);
+
+            for(int i=0;i<strlen(eptr[contact_count].name);i++){
+                if(isalpha(eptr[contact_count].name[i]) == 0){
+                    add_contacts_flag=1;
+                    break;
+                }
+            }
+            if(add_contacts_flag){
+                printf("Enter Valid Name, Only letters allowed.\n");
+            }
+
+        }while(add_contacts_flag);
         
-        printf("Enter Mobile Number: ");
-        scanf("%s",eptr[contact_count].number);
+        do{
+            add_contacts_flag=0;
+            printf("Enter Mobile Number: ");
+            scanf(" %[^\n]",eptr[contact_count].number);
+
+            if(strlen(eptr[contact_count].number) != 10){
+                if(strlen(eptr[contact_count].number)>10){
+                    printf("Length must not exceed 10.\n");
+                }
+                else if(strlen(eptr[contact_count].number)<10){
+                    printf("Length must not be less than 10.\n");
+                }
+                add_contacts_flag=1;
+            }
+            else{
+                for(int i=0;i<strlen(eptr[contact_count].number);i++){
+                    if(isdigit(eptr[contact_count].number[i]) == 0){
+                        add_contacts_flag=1;
+                        break;
+                    }
+                }
+                if(add_contacts_flag){
+                    printf("Enter Valid Mobile Number, Only Digits.\n");
+                }
+            }
+
+            if(!add_contacts_flag){
+                for(int i=0;i<contact_count;i++){
+                    if(strcmp(eptr[i].number,eptr[contact_count].number) == 0){
+                        add_contacts_flag=1;
+                        printf("Mobile Number already Exists.\n");
+                        break;
+                    }
+                }
+            }
+
+        }while(add_contacts_flag);
+
+
+        do{
+            add_contacts_flag=0;
+
+            printf("Enter Email-ID: ");
+            scanf(" %[^\n]",eptr[contact_count].email);
         
-        printf("Enter Email-ID: ");
-        scanf("%s",eptr[contact_count].email);
+            int len = strlen(eptr[contact_count].email);
+            char *at_position_ptr = strchr(eptr[contact_count].email, '@');     // finds @ position
+            char *dot_position_ptr = strrchr(eptr[contact_count].email, '.');   // finds . position
+        
+            if(at_position_ptr == NULL || dot_position_ptr == NULL){                                        // check @ exists
+                if(at_position_ptr == NULL){
+                    printf("Invalid Email, must contain '@'\n");
+                }
+                else{
+                    printf("Invalid Email, must contain '.'\n");
+                }
+                add_contacts_flag=1;
+            }   
+            else if(at_position_ptr > dot_position_ptr){                        // check for poper domain in email
+                add_contacts_flag=1;
+                printf("Invalid Email, dosent contain proper domain\n");
+            }
+            else if(len < 7){                                                   // minimum: a@b.com = 7 chars
+                add_contacts_flag=1;
+                printf("Invalid Email, too short.\n");
+            }
+            else if(strcmp(&eptr[contact_count].email[len-4], ".com") != 0){    // chekck email ends with .com
+                add_contacts_flag=1;
+                printf("Invalid Email, must end with .com\n");
+            }
+            else{
+                for(int i=0;i<contact_count;i++){                               // check duplicate
+                    if(strcmp(eptr[i].email, eptr[contact_count].email) == 0){
+                        add_contacts_flag=1;
+                        printf("Email already exists.\n");
+                        break;
+                    }
+                }
+            }
+        }while(add_contacts_flag);
         
         contact_count++;
         
-        printf("\nDo you want to add another contact? [1 for Yes / 0 for No]: ");
-        scanf("%d",&add_contacts_loop);
+        printf("\nDo you want to add another contact? [Y/n]: ");
+        scanf(" %c",&add_contacts_user_input);
+
+        if(add_contacts_user_input == 'Y' || add_contacts_user_input == 'y'){
+            add_contacts_loop=1;
+        }
+        else{
+            add_contacts_loop=0;
+        }
     }
 }
 
@@ -204,7 +323,6 @@ void edit_contacts(struct Contacts *eptr,int size){
     printf("Invalid Option! Please enter a valid option\n");
     }
 }
-
 
 void search_contacts(struct Contacts *eptr,int size){
     int search_flag=0;

@@ -6,6 +6,7 @@ the header files there
 #include<stdio.h>                               
 #include<string.h>
 #include <unistd.h>
+#include<ctype.h>
 
 struct Contacts{
     char name[50];

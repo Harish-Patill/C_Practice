@@ -3,7 +3,7 @@
 /*
 progress so far:
 
-1. Add contacts             : Validation remaining
+1. Add contacts             : Completed;
 2. Search contacts          : Completed;
 3. Edit contacts            : Validation remaining
 4. Delete contacts          : Validation remaining
@@ -15,6 +15,7 @@ progress so far:
 
 struct Contacts contact_details[100];
 int contact_count=0;
+int max_size=100;
 
 int main(){
     int flag=1;
@@ -27,7 +28,7 @@ int main(){
 
         switch(main_option){
             case 1:{
-                create_contacts(contact_details,contact_count);
+                create_contacts(contact_details,max_size);
                 break;
             }
 
