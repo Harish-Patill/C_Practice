@@ -4,7 +4,7 @@ Doing my C Programming and Github practice in this repo.
 ---
 
 ## How to Run
-Install GCC Compiler from [here](https://sourceforge.net/projects/gcc-win64/) and to verify run:
+Install GCC Compiler from [here](https://sourceforge.net/projects/mingw/) and to verify run:
 ```bash
 gcc --version
 ```
@@ -159,9 +159,9 @@ gcc filename.c -o output
 
 Projects
 
-01-Address Book : (Status - Working on Skeleton Code)
+01-Address Book : (Status - Working on Validation)
 
-    1. Add contacts             : Validation remaining
+    1. Add contacts             : Completed;
     2. Search contacts          : Completed;
     3. Edit contacts            : Validation remaining
     4. Delete contacts          : Validation remaining
