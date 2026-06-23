@@ -17,7 +17,7 @@ gcc filename.c -o output
 ---
 
 ## My Compiler and Operating system
-- GCC compiler
+- GCC compiler version:     13.3.0
 - Linux-Ubuntu and Windows 11
 
 ---
@@ -160,10 +160,10 @@ Projects
 
 01-Address Book : (Status - Working on Skeleton Code)
 
-    1. Add contacts             : Done with code : Validation remaining
+    1. Add contacts             : Validation remaining
     2. Search contacts          : Completed;
-    3. Edit contacts            : Done with code : Validation remaining
-    4. Delete contacts          : 
+    3. Edit contacts            : Validation remaining
+    4. Delete contacts          : Validation remaining
     5. Display contacts         : Completed;
     6. Save and Exit            : 
     7. Exit                     : Completed;
