@@ -25,7 +25,6 @@ void create_contacts(struct Contacts *eptr,int max_size){
     int add_contacts_flag=0;
     int add_contacts_loop=1;
     char add_contacts_user_input;
-    char email_suffix[]=".com";
     
     if(contact_count >= max_size){
         printf("Address Book is Full!\nDelete few Contacts if you want to Continue\n");
