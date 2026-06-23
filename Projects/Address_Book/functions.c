@@ -1,14 +1,14 @@
 #include "project_header.h"
 
-void list_all(struct Contacts *eptr,int size){
-    for(int i=0;i<size;i++){
+void list_all(struct Contacts *eptr){
+    for(int i=0;i<contact_count;i++){
         printf("%s %s %s\n",eptr[i].name,eptr[i].number,eptr[i].email);
     }
 }
 
 
-/*
-Validations:
+/* Completed
+Validations: 
     - Name should be only be alphabet
 
     - Mobile number should be only 10 digits
@@ -26,14 +26,14 @@ void create_contacts(struct Contacts *eptr,int max_size){
     int add_contacts_loop=1;
     char add_contacts_user_input;
     
-    if(contact_count >= max_size){
+    if(contact_count >= max_size){                                                              //to keep track of the address books capacity
         printf("Address Book is Full!\nDelete few Contacts if you want to Continue\n");
         return;
     }
     
-    while(add_contacts_loop){
+    while(add_contacts_loop){                                                                   // Run in a loop to add as many contacts
         
-        do{
+        do{                                                                                     // Name input with validation
             add_contacts_flag=0;
             printf("\nEnter Name: ");
             scanf(" %[^\n]",eptr[contact_count].name);
@@ -50,12 +50,12 @@ void create_contacts(struct Contacts *eptr,int max_size){
 
         }while(add_contacts_flag);
         
-        do{
+        do{                                                                                      // Mobile Number input with validation 
             add_contacts_flag=0;
             printf("Enter Mobile Number: ");
             scanf(" %[^\n]",eptr[contact_count].number);
 
-            if(strlen(eptr[contact_count].number) != 10){
+            if(strlen(eptr[contact_count].number) != 10){                                       // M.no Length should be always 10
                 if(strlen(eptr[contact_count].number)>10){
                     printf("Length must not exceed 10.\n");
                 }
@@ -64,7 +64,7 @@ void create_contacts(struct Contacts *eptr,int max_size){
                 }
                 add_contacts_flag=1;
             }
-            else{
+            else{                                                                               // M.no should be number only
                 for(int i=0;i<strlen(eptr[contact_count].number);i++){
                     if(isdigit(eptr[contact_count].number[i]) == 0){
                         add_contacts_flag=1;
@@ -76,7 +76,7 @@ void create_contacts(struct Contacts *eptr,int max_size){
                 }
             }
 
-            if(!add_contacts_flag){
+            if(!add_contacts_flag){                                                             // M.no should be unique
                 for(int i=0;i<contact_count;i++){
                     if(strcmp(eptr[i].number,eptr[contact_count].number) == 0){
                         add_contacts_flag=1;
@@ -99,7 +99,7 @@ void create_contacts(struct Contacts *eptr,int max_size){
             char *at_position_ptr = strchr(eptr[contact_count].email, '@');     // finds @ position
             char *dot_position_ptr = strrchr(eptr[contact_count].email, '.');   // finds . position
         
-            if(at_position_ptr == NULL || dot_position_ptr == NULL){                                        // check @ exists
+            if(at_position_ptr == NULL || dot_position_ptr == NULL){            // check @ exists
                 if(at_position_ptr == NULL){
                     printf("Invalid Email, must contain '@'\n");
                 }
@@ -145,6 +145,11 @@ void create_contacts(struct Contacts *eptr,int max_size){
     }
 }
 
+
+/*
+Validations:
+    -
+*/
 void edit_contacts(struct Contacts *eptr,int size){
     int name_count=0;
     int edit_flag=0;
@@ -168,7 +173,7 @@ void edit_contacts(struct Contacts *eptr,int size){
         }
         if(name_count>1){
             printf("\nThere are %d contacts with the same name as '%s'\n",name_count,edit_name);
-            list_all(eptr,size);
+            list_all(eptr);
             printf("\nEdit the contact by searching for Mobile Number or Email instead\n");
             
             printf("1. Mobile Number\n2. Email-ID\nSelect any of the above options: ");
@@ -323,7 +328,14 @@ void edit_contacts(struct Contacts *eptr,int size){
     }
 }
 
-void search_contacts(struct Contacts *eptr,int size){
+
+/* Completed
+Validations:
+    -same input validations as in the 'add_contacts' function, except the 'input should be unique' validation,
+     since we need a matching contact to print it in the terminal
+*/
+void search_contacts(struct Contacts *eptr){
+    int search_contacts_error_flag=0;
     int search_flag=0;
     int user_search_option=0;
     char search_name[50];
@@ -336,9 +348,26 @@ void search_contacts(struct Contacts *eptr,int size){
 
     switch(user_search_option){
         case 1:{
-            printf("Enter the Name: ");
-            scanf(" %[^\n]",search_name);
-            for(int i=0;i<size;i++){
+
+            do{
+                search_contacts_error_flag=0;
+
+                printf("Enter the Name: ");
+                scanf(" %[^\n]",search_name);
+
+                for(int i=0;i<strlen(search_name);i++){                             // should be only alphabets
+                    if(isalpha(search_name[i]) == 0){
+                        search_contacts_error_flag=1;
+                        break;
+                    }
+                }
+                if(search_contacts_error_flag){
+                    printf("Enter Valid Name, Only letters allowed.\n");
+                }     
+
+            }while(search_contacts_error_flag);
+            
+            for(int i=0;i<contact_count;i++){                                       // will print the contact details
                 if(strcmp(eptr[i].name,search_name) == 0){
                     printf("%s %s %s",eptr[i].name,eptr[i].number,eptr[i].email);
                     search_flag=1;
@@ -346,14 +375,43 @@ void search_contacts(struct Contacts *eptr,int size){
                 }
             }
             if(!search_flag) printf("No contact found with Name %s\n",search_name);
+
             break;
         }
 
         case 2:{
-            printf("Enter the Number: ");
-            scanf(" %[^\n]",search_number);
+            
+            do{
+                search_contacts_error_flag=0;
 
-            for(int i=0;i<size;i++){
+                printf("Enter the Number: ");
+                scanf(" %[^\n]",search_number);
+                
+                if(strlen(search_number) != 10){                                       // M.no Length should be always 10
+                    if(strlen(search_number)>10){
+                        printf("Length must not exceed 10.\n");
+                    }
+                    else if(strlen(search_number)<10){
+                        printf("Length must not be less than 10.\n");
+                    }
+                    search_contacts_error_flag=1;
+                }
+                else{                                                                  // M.no should be number only
+                    for(int i=0;i<strlen(search_number);i++){
+                        if(isdigit(search_number[i]) == 0){
+                            search_contacts_error_flag=1;
+                            break;
+                        }
+                    }
+                    if(search_contacts_error_flag){
+                    printf("Enter Valid Mobile Number, Only Digits.\n");
+                    }
+                }
+                
+            }while(search_contacts_error_flag);
+
+
+            for(int i=0;i<contact_count;i++){                                          // Will print all the contact details
                 if(strcmp(eptr[i].number,search_number) == 0){
                     printf("%s %s %s",eptr[i].name,eptr[i].number,eptr[i].email);
                     search_flag=1;
@@ -365,22 +423,54 @@ void search_contacts(struct Contacts *eptr,int size){
         }
 
         case 3:{
-            printf("Enter Email-ID :");
-            scanf(" %[^\n]",search_email);
 
-            for(int i=0;i<size;i++){
-                if(strcmp(eptr[i].email,search_email) == 0){
-                    printf("%s %s %s",eptr[i].name,eptr[i].number,eptr[i].email);
+            do{
+                search_contacts_error_flag=0;
+
+                printf("Enter the Email-ID: ");
+                scanf(" %[^\n]",search_email);
+
+                int len = strlen(search_email);                                         // finding length of email
+                char *at_position_ptr = strchr(search_email, '@');                      // finding @ position
+                char *dot_position_ptr = strrchr(search_email, '.');                    // finding . position
+
+                if(at_position_ptr == NULL || dot_position_ptr == NULL){                // email not having @/.
+                    if(at_position_ptr == NULL){
+                        printf("Invalid Email, must contain '@'\n");
+                    }
+                    else{
+                        printf("Invalid Email, must contain '.'\n");
+                    }
+                    search_contacts_error_flag=1;
+                }   
+                else if(at_position_ptr > dot_position_ptr){                            // imporper domain 
+                    search_contacts_error_flag=1;
+                    printf("Invalid Email, doesn't contain proper domain\n");
+                }
+                else if(len < 7){                                                       // invalid as it is too short
+                    search_contacts_error_flag=1;
+                    printf("Invalid Email, too short.\n");
+                }
+                else if(strcmp(&search_email[len-4], ".com") != 0){                    // invalid as it dosent end with .com
+                    search_contacts_error_flag=1;
+                    printf("Invalid Email, must end with .com\n");
+                }
+
+            }while(search_contacts_error_flag);
+
+            for(int i=0;i<contact_count;i++){                                           // prints the contact details
+                if(strcmp(eptr[i].email, search_email) == 0){
+                    printf("%s %s %s\n",eptr[i].name,eptr[i].number,eptr[i].email);
                     search_flag=1;
                     break;
                 }
             }
-            if(!search_flag) printf("No contact found with Email-ID %s\n",search_email);
+            if(!search_flag) printf("No contact found with Email %s\n",search_email);
             break;
         }
 
         case 4:{
-            user_search_option=0;
+            user_search_option=0;                                                       // going to main menu
             printf("Returning to Main Menu\n");
             sleep(1);       // 1 second
             break;
@@ -388,9 +478,15 @@ void search_contacts(struct Contacts *eptr,int size){
 
         default:
             printf("Enter a Valid Input!, Try again\n");
+            break;
     }
 }
 
+
+/*
+Validations:
+    -
+*/
 void delete_contact(struct Contacts *eptr,int size){
     int delete_flag=0;
     int user_delete_option=0;

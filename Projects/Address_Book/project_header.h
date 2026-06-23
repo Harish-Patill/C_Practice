@@ -17,8 +17,8 @@ struct Contacts{
 extern struct Contacts contact_details[100];
 extern int contact_count;
 
-void create_contacts(struct Contacts *eptr,int size);
+void create_contacts(struct Contacts *eptr,int size);       //size needed to keep check of the limit
 void edit_contacts(struct Contacts *eptr,int size);
-void list_all(struct Contacts *eptr,int size);
-void search_contacts(struct Contacts *eptr,int size);
+void list_all(struct Contacts *eptr);                       //size not needed
+void search_contacts(struct Contacts *eptr);                //size not needed
 void delete_contact(struct Contacts *eptr,int size);

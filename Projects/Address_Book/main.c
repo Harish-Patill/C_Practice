@@ -33,7 +33,7 @@ int main(){
             }
 
             case 2:{
-                search_contacts(contact_details,contact_count);
+                search_contacts(contact_details);
                 break;
             }
 
@@ -48,7 +48,7 @@ int main(){
             }
 
             case 5:{
-                list_all(contact_details,contact_count);
+                list_all(contact_details);
                 break;
             }
             case 7:{
