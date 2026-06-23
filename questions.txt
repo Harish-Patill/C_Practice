@@ -127,3 +127,15 @@
 17-WAP to check whether a string is a palindrome or not.
 18-WAP to count the number of special characters in a string.
 -----------------------------------------------------------------------------------------------------------------------------------------
+
+Projects
+
+01-Address Book : (Status - Working on Skeleton Code)
+
+    1. Add contacts             : Done with code : Validation remaining
+    2. Search contacts          : Completed;
+    3. Edit contacts            : Done with code : Validation remaining
+    4. Delete contacts          : 
+    5. Display contacts         : Completed;
+    6. Save and Exit            : 
+    7. Exit                     : Completed;

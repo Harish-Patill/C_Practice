@@ -6,9 +6,9 @@ progress so far:
 1. Add contacts             : Done with code : Validation remaining
 2. Search contacts          : Completed;
 3. Edit contacts            : Done with code : Validation remaining
-4. Delete contacts
+4. Delete contacts          :
 5. Display contacts         : Completed;
-6. Save and exit
+6. Save and exit            :
 7. Exit                     : Completed;
 */
 
