@@ -87,6 +87,7 @@ gcc filename.c -o output
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 7. While Loops
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 8. Arrays
 
@@ -114,8 +115,9 @@ gcc filename.c -o output
 -----------------------------------------------------------------------------------------------------------------------------------------
 10. Pointers
 
-WAP to Declare a pointer, assign it an address, and print the address and value.
-WAP to Show that & gives address and * gives the value at that address.
+01-WAP to Declare a pointer, assign it an address, and print the address and value.
+02-WAP to print the size of different daya types using * operator and sizeof() function.
+03-WAP to Show that & gives address and * gives the value at that address.
 -----------------------------------------------------------------------------------------------------------------------------------------
 11. Function Recrusion
 
@@ -153,6 +155,18 @@ WAP to Show that & gives address and * gives the value at that address.
 17-WAP to check whether a string is a palindrome or not.
 18-WAP to count the number of special characters in a string.
 -----------------------------------------------------------------------------------------------------------------------------------------
+
+Projects
+
+01-Address Book : (Status - Working on Skeleton Code)
+
+    1. Add contacts             : Done with code : Validation remaining
+    2. Search contacts          : Completed;
+    3. Edit contacts            : Done with code : Validation remaining
+    4. Delete contacts          : 
+    5. Display contacts         : Completed;
+    6. Save and Exit            : 
+    7. Exit                     : Completed;
 ```
 <!-- QUESTIONS_END -->
 
