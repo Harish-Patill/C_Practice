@@ -159,15 +159,15 @@ gcc filename.c -o output
 
 Projects
 
-01-Address Book : (Status - Working on Validation)
+01-Address Book : (Status - Completed)
 
-    1. Add contacts             : Completed;
-    2. Search contacts          : Completed;
-    3. Edit contacts            : Completed;
-    4. Delete contacts          : Completed;
-    5. Display contacts         : Completed;
-    6. Save and Exit            : 
-    7. Exit                     : Completed;
+    1. Add contacts             
+    2. Search contacts         
+    3. Edit contacts           
+    4. Delete contacts         
+    5. Display contacts        
+    6. Save and Exit           
+    7. Exit
 ```
 <!-- QUESTIONS_END -->
 
