@@ -146,13 +146,17 @@ void create_contacts(struct Contacts *eptr,int max_size){
 }
 
 
-/*
+/* Completed
 Validations:
-    -
+    - Searched contact should be present, if not proper validation statement must be printed
+    - when taking input so search to edit a contact, it must be valid
+    - while editing, the new info must be valid too
 */
 void edit_contacts(struct Contacts *eptr,int size){
     int name_count=0;
     int edit_flag=0;
+    int new_info_validation_flag=0;
+    int validaion_edit_flag=0;
     int user_edit_option=0;
     int sub_user_edit_option=0;
     char edit_name[50];
@@ -164,14 +168,31 @@ void edit_contacts(struct Contacts *eptr,int size){
     
     switch(user_edit_option){
     case 1:{
-        printf("Enter the Name: ");
-        scanf(" %[^\n]",edit_name);
+
+        do{
+            validaion_edit_flag=0;
+
+            printf("Enter the Name: ");
+            scanf(" %[^\n]",edit_name);
+
+            for(int i=0;i<strlen(edit_name);i++){                             // should be only alphabets
+                if(isalpha(edit_name[i]) == 0 && edit_name[i] != ' '){
+                    validaion_edit_flag=1;
+                    break;
+                }
+            }
+            if(validaion_edit_flag){
+                printf("Enter Valid Name, Only letters allowed.\n");
+            }
+                
+        }while(validaion_edit_flag);
+
         for(int i=0;i<size;i++){
             if(strcmp(eptr[i].name,edit_name) == 0){
                 name_count++;
             }
         }
-        if(name_count>1){
+        if(name_count>1){                                                                                   // when multiple contacts with same name
             printf("\nThere are %d contacts with the same name as '%s'\n",name_count,edit_name);
             list_all(eptr);
             printf("\nEdit the contact by searching for Mobile Number or Email instead\n");
@@ -179,22 +200,115 @@ void edit_contacts(struct Contacts *eptr,int size){
             printf("1. Mobile Number\n2. Email-ID\nSelect any of the above options: ");
             scanf("%d",&sub_user_edit_option);
             
-            switch(sub_user_edit_option){
+            switch(sub_user_edit_option){                                                                   // so will edit the contact by searching using email or mobile
                 case 1:{
-                    printf("Enter the Mobile Number: ");
-                    scanf(" %[^\n]",edit_number);
+
+                    do{
+                        validaion_edit_flag=0;
+
+                        printf("Enter the Mobile Number: ");
+                        scanf(" %[^\n]",edit_number);
+
+                         if(strlen(edit_number) != 10){                                       // M.no Length should be always 10
+                            if(strlen(edit_number)>10){
+                                printf("Length must not exceed 10.\n");
+                            }
+                            else if(strlen(edit_number)<10){
+                                printf("Length must not be less than 10.\n");
+                            }
+                            validaion_edit_flag=1;
+                        }
+                    }while(validaion_edit_flag);
                     
                     for(int i=0;i<size;i++){
                         if(strcmp(eptr[i].number,edit_number) == 0){
+                            
                             printf("\nEnter New Details Below:\n");
-                            printf("Enter Name: ");
-                            scanf(" %[^\n]",eptr[i].name);
+
+                            do{
+                                new_info_validation_flag=0;
+
+                                printf("Enter Name: ");
+                                scanf(" %[^\n]",eptr[i].name);
+
+                                for(int j=0; j<strlen(eptr[i].name); j++){
+                                    if(isalpha(eptr[i].name[j]) == 0 && eptr[i].name[j] != ' '){
+                                        new_info_validation_flag=1;
+                                        break;
+                                    }
+                                }
+                                if(new_info_validation_flag){
+                                    printf("Enter Valid Name, Only letters allowed.\n");
+                                }
+
+                            }while(new_info_validation_flag);
+
                             
-                            printf("Enter Mobile Number: ");
-                            scanf("%s",eptr[i].number);
+                            do{
+                                new_info_validation_flag=0;
+
+                                printf("Enter Mobile Number: ");
+                                scanf("%s",eptr[i].number);
+
+                                if(strlen(eptr[i].number) != 10){                                       // M.no Length should be always 10
+                                    if(strlen(eptr[i].number)>10){
+                                        printf("Length must not exceed 10.\n");
+                                    }
+                                    else if(strlen(eptr[i].number)<10){
+                                        printf("Length must not be less than 10.\n");
+                                    }
+                                    new_info_validation_flag=1;
+                                }
+                                else{                                                                  // M.no should be number only
+                                    for(int j=0; j<strlen(eptr[i].number); j++){
+                                        if(isdigit(eptr[i].number[j]) == 0){
+                                            new_info_validation_flag=1;
+                                            break;
+                                        }   
+                                    }
+                                    if(new_info_validation_flag){
+                                    printf("Enter Valid Mobile Number, Only Digits.\n");
+                                    }
+                                }                    
+
+                            }while(new_info_validation_flag);
+
+
+                            do{
+                                new_info_validation_flag=0;
+
+                                printf("Enter Email-ID: ");
+                                scanf("%s",eptr[i].email);
+
+                                int len = strlen(eptr[i].email);                                         // finding length of email
+                                char *at_position_ptr = strchr(eptr[i].email, '@');                      // finding @ position
+                                char *dot_position_ptr = strrchr(eptr[i].email, '.');                    // finding . position
+
+                                if(at_position_ptr == NULL || dot_position_ptr == NULL){                // email not having @/.
+                                    if(at_position_ptr == NULL){
+                                        printf("Invalid Email, must contain '@'\n");
+                                    }
+                                    else{
+                                        printf("Invalid Email, must contain '.'\n");
+                                    }
+                                    new_info_validation_flag=1;
+                                }   
+                                else if(at_position_ptr > dot_position_ptr){                            // imporper domain 
+                                    new_info_validation_flag=1;
+                                    printf("Invalid Email, doesn't contain proper domain\n");
+                                }
+                                else if(len < 7){                                                       // invalid as it is too short
+                                    new_info_validation_flag=1;
+                                    printf("Invalid Email, too short.\n");
+                                }
+                                else if(strcmp(&eptr[i].email[len-4], ".com") != 0){                    // invalid as it dosent end with .com
+                                    new_info_validation_flag=1;
+                                    printf("Invalid Email, must end with .com\n");
+                                }
+                                
+
+                            }while(new_info_validation_flag);
                             
-                            printf("Enter Email-ID: ");
-                            scanf("%s",eptr[i].email);
 
                             printf("\nContact Edited Succesfully\n");
                             printf("Returning to main menu...\n");
@@ -208,20 +322,130 @@ void edit_contacts(struct Contacts *eptr,int size){
                 }
                 
                 case 2:{
-                    printf("Enter the Email-ID: ");
-                    scanf(" %[^\n]",edit_email);
+
+                    do{
+                        new_info_validation_flag=0;
+
+                        printf("Enter the Email-ID: ");
+                        scanf(" %[^\n]",edit_email);
+
+                        int len = strlen(edit_email);                                         // finding length of email
+                        char *at_position_ptr = strchr(edit_email, '@');                      // finding @ position
+                        char *dot_position_ptr = strrchr(edit_email, '.');                    // finding . position
+
+                        if(at_position_ptr == NULL || dot_position_ptr == NULL){                // email not having @/.
+                            if(at_position_ptr == NULL){
+                                printf("Invalid Email, must contain '@'\n");
+                            }
+                            else{
+                                printf("Invalid Email, must contain '.'\n");
+                            }
+                            new_info_validation_flag=1;
+                        }   
+                        else if(at_position_ptr > dot_position_ptr){                            // imporper domain 
+                            new_info_validation_flag=1;
+                            printf("Invalid Email, doesn't contain proper domain\n");
+                        }
+                        else if(len < 7){                                                       // invalid as it is too short
+                            new_info_validation_flag=1;
+                            printf("Invalid Email, too short.\n");
+                        }
+                        else if(strcmp(&edit_email[len-4], ".com") != 0){                    // invalid as it dosent end with .com
+                            new_info_validation_flag=1;
+                            printf("Invalid Email, must end with .com\n");
+                        }
+                        
+
+                    }while(new_info_validation_flag);
+                    
                     
                     for(int i=0;i<size;i++){
                         if(strcmp(eptr[i].email,edit_email) == 0){
                             printf("\nEnter New Details Below:\n");
-                            printf("Enter Name: ");
-                            scanf(" %[^\n]",eptr[i].name);
                             
-                            printf("Enter Mobile Number: ");
-                            scanf("%s",eptr[i].number);
+                            do{
+                                new_info_validation_flag=0;
+
+                                printf("Enter Name: ");
+                                scanf(" %[^\n]",eptr[i].name);
+
+                                for(int j=0; j<strlen(eptr[i].name); j++){
+                                    if(isalpha(eptr[i].name[j]) == 0 && eptr[i].name[j] != ' '){
+                                        new_info_validation_flag=1;
+                                        break;
+                                    }
+                                }
+                                if(new_info_validation_flag){
+                                    printf("Enter Valid Name, Only letters allowed.\n");
+                                }
+
+                            }while(new_info_validation_flag);
+
                             
-                            printf("Enter Email-ID: ");
-                            scanf("%s",eptr[i].email);
+                            do{
+                                new_info_validation_flag=0;
+
+                                printf("Enter Mobile Number: ");
+                                scanf("%s",eptr[i].number);
+
+                                if(strlen(eptr[i].number) != 10){                                       // M.no Length should be always 10
+                                    if(strlen(eptr[i].number)>10){
+                                        printf("Length must not exceed 10.\n");
+                                    }
+                                    else if(strlen(eptr[i].number)<10){
+                                        printf("Length must not be less than 10.\n");
+                                    }
+                                    new_info_validation_flag=1;
+                                }
+                                else{                                                                  // M.no should be number only
+                                    for(int j=0; j<strlen(eptr[i].number); j++){
+                                        if(isdigit(eptr[i].number[j]) == 0){
+                                            new_info_validation_flag=1;
+                                            break;
+                                        }
+                                    }
+                                    if(new_info_validation_flag){
+                                    printf("Enter Valid Mobile Number, Only Digits.\n");
+                                    }
+                                }                    
+
+                            }while(new_info_validation_flag);
+
+
+                            do{
+                                new_info_validation_flag=0;
+
+                                printf("Enter Email-ID: ");
+                                scanf("%s",eptr[i].email);
+
+                                int len = strlen(eptr[i].email);                                         // finding length of email
+                                char *at_position_ptr = strchr(eptr[i].email, '@');                      // finding @ position
+                                char *dot_position_ptr = strrchr(eptr[i].email, '.');                    // finding . position
+
+                                if(at_position_ptr == NULL || dot_position_ptr == NULL){                // email not having @/.
+                                    if(at_position_ptr == NULL){
+                                        printf("Invalid Email, must contain '@'\n");
+                                    }
+                                    else{
+                                        printf("Invalid Email, must contain '.'\n");
+                                    }
+                                    new_info_validation_flag=1;
+                                }   
+                                else if(at_position_ptr > dot_position_ptr){                            // imporper domain 
+                                    new_info_validation_flag=1;
+                                    printf("Invalid Email, doesn't contain proper domain\n");
+                                }
+                                else if(len < 7){                                                       // invalid as it is too short
+                                    new_info_validation_flag=1;
+                                    printf("Invalid Email, too short.\n");
+                                }
+                                else if(strcmp(&eptr[i].email[len-4], ".com") != 0){                    // invalid as it dosent end with .com
+                                    new_info_validation_flag=1;
+                                    printf("Invalid Email, must end with .com\n");
+                                }
+                                
+
+                            }while(new_info_validation_flag);
                             
                             printf("\nContact Edited Succesfully\n");
                             printf("Returning to main menu...\n");
@@ -237,18 +461,95 @@ void edit_contacts(struct Contacts *eptr,int size){
         }
 
 
-        if(name_count==1){
+        if(name_count==1){                                                          // normal, no multiple contacts with same name
             for(int i=0;i<size;i++){
                 if(strcmp(eptr[i].name,edit_name) == 0){
                     printf("\nEnter New Details Below:\n");
-                    printf("Enter Name: ");
-                    scanf(" %[^\n]",eptr[i].name);
                     
-                    printf("Enter Mobile Number: ");
-                    scanf("%s",eptr[i].number);
+                    do{
+                        new_info_validation_flag=0;
+
+                        printf("Enter Name: ");
+                        scanf(" %[^\n]",eptr[i].name);
+
+                        for(int j=0; j<strlen(eptr[i].name); j++){
+                            if(isalpha(eptr[i].name[j]) == 0 && eptr[i].name[j] != ' '){
+                                new_info_validation_flag=1;
+                                break;
+                            }
+                        }
+                        if(new_info_validation_flag){
+                            printf("Enter Valid Name, Only letters allowed.\n");
+                        }
+
+                    }while(new_info_validation_flag);
+
+                            
+                    do{
+                        new_info_validation_flag=0;
+
+                        printf("Enter Mobile Number: ");
+                        scanf("%s",eptr[i].number);
+
+                        if(strlen(eptr[i].number) != 10){                                       // M.no Length should be always 10
+                            if(strlen(eptr[i].number)>10){
+                                printf("Length must not exceed 10.\n");
+                            }
+                            else if(strlen(eptr[i].number)<10){
+                                printf("Length must not be less than 10.\n");
+                            }
+                            new_info_validation_flag=1;
+                        }
+                        else{                                                                  // M.no should be number only
+                            for(int j=0; j<strlen(eptr[i].number); j++){
+                                if(isdigit(eptr[i].number[j]) == 0){
+                                    new_info_validation_flag=1;
+                                    break;
+                                }
+                            }
+                            if(new_info_validation_flag){
+                            printf("Enter Valid Mobile Number, Only Digits.\n");
+                            }
+                        }                    
+
+                    }while(new_info_validation_flag);
                     
-                    printf("Enter Email-ID: ");
-                    scanf("%s",eptr[i].email);
+
+                    do{
+                        new_info_validation_flag=0;
+
+                        printf("Enter Email-ID: ");
+                        scanf("%s",eptr[i].email);
+
+                        int len = strlen(eptr[i].email);                                         // finding length of email
+                        char *at_position_ptr = strchr(eptr[i].email, '@');                      // finding @ position
+                        char *dot_position_ptr = strrchr(eptr[i].email, '.');                    // finding . position
+
+                        if(at_position_ptr == NULL || dot_position_ptr == NULL){                // email not having @/.
+                            if(at_position_ptr == NULL){
+                                printf("Invalid Email, must contain '@'\n");
+                            }
+                            else{
+                                printf("Invalid Email, must contain '.'\n");
+                            }
+                            new_info_validation_flag=1;
+                        }   
+                        else if(at_position_ptr > dot_position_ptr){                            // imporper domain 
+                            new_info_validation_flag=1;
+                            printf("Invalid Email, doesn't contain proper domain\n");
+                        }
+                        else if(len < 7){                                                       // invalid as it is too short
+                            new_info_validation_flag=1;
+                            printf("Invalid Email, too short.\n");
+                        }
+                        else if(strcmp(&eptr[i].email[len-4], ".com") != 0){                    // invalid as it dosent end with .com
+                            new_info_validation_flag=1;
+                            printf("Invalid Email, must end with .com\n");
+                        }
+                        
+
+                    }while(new_info_validation_flag);
+                    
                     printf("\nContact Edited Succesfully\n");
                     printf("Returning to main menu...\n");
                     sleep(1);
@@ -259,60 +560,261 @@ void edit_contacts(struct Contacts *eptr,int size){
             if(!edit_flag) printf("Couldn't find any contact with name %s\n",edit_name);
             break;
         }
+
+        if(name_count == 0){                                                        // if no matches are found, will print that no matches are there.
+            printf("No Contact found with the Name '%s'\n",edit_name);
+        }
         break;
     }
     
     case 2:{
-        printf("Enter the Mobile Number: ");
-        scanf(" %[^\n]",edit_number);
-        
+
+        do{
+            validaion_edit_flag=0;
+    
+            printf("Enter the Mobile Number: ");
+            scanf(" %[^\n]",edit_number);
+    
+            if(strlen(edit_number) != 10){
+                if(strlen(edit_number)>10){
+                    printf("Length must not exceed 10.\n");
+                }
+                else if(strlen(edit_number)<10){
+                    printf("Length must not be less than 10.\n");
+                }
+                validaion_edit_flag=1;
+            }
+            else{
+                for(int i=0;i<strlen(edit_number);i++){
+                    if(isdigit(edit_number[i]) == 0){
+                        validaion_edit_flag=1;
+                        break;
+                    }
+                }
+                if(validaion_edit_flag){
+                    printf("Enter Valid Mobile Number, Only Digits.\n");
+                }
+            }
+        }while(validaion_edit_flag);
+    
         for(int i=0;i<size;i++){
             if(strcmp(eptr[i].number,edit_number) == 0){
                 printf("\nEnter New Details Below:\n");
-                printf("Enter Name: ");
-                scanf(" %[^\n]",eptr[i].name);
-                
-                printf("Enter Mobile Number: ");
-                scanf("%s",eptr[i].number);
-                
-                printf("Enter Email-ID: ");
-                scanf("%s",eptr[i].email);
-
-                printf("\nContact Edited Succesfully\n");
-                printf("Returning to main menu...\n");
-                sleep(1);   
-
-                edit_flag=1;
-            }
-        }
-        if(!edit_flag) printf("Couldn't find any contact with name %s\n",edit_number);
-        break;
-    }
     
-    case 3:{
-        printf("Enter the Email-ID: ");
-        scanf(" %[^\n]",edit_email);
-        
-        for(int i=0;i<size;i++){
-            if(strcmp(eptr[i].email,edit_email) == 0){
-                printf("\nEnter New Details Below:\n");
-                printf("Enter Name: ");
-                scanf(" %[^\n]",eptr[i].name);
-                
-                printf("Enter Mobile Number: ");
-                scanf("%s",eptr[i].number);
-                
-                printf("Enter Email-ID: ");
-                scanf("%s",eptr[i].email);
-                
+                do{
+                    new_info_validation_flag=0;
+    
+                    printf("Enter Name: ");
+                    scanf(" %[^\n]",eptr[i].name);
+    
+                    for(int j=0; j<strlen(eptr[i].name); j++){
+                        if(isalpha(eptr[i].name[j]) == 0 && eptr[i].name[j] != ' '){
+                            new_info_validation_flag=1;
+                            break;
+                        }
+                    }
+                    if(new_info_validation_flag){
+                        printf("Enter Valid Name, Only letters allowed.\n");
+                    }
+                }while(new_info_validation_flag);
+    
+                do{
+                    new_info_validation_flag=0;
+    
+                    printf("Enter Mobile Number: ");
+                    scanf("%s",eptr[i].number);
+    
+                    if(strlen(eptr[i].number) != 10){
+                        if(strlen(eptr[i].number)>10){
+                            printf("Length must not exceed 10.\n");
+                        }
+                        else if(strlen(eptr[i].number)<10){
+                            printf("Length must not be less than 10.\n");
+                        }
+                        new_info_validation_flag=1;
+                    }
+                    else{
+                        for(int j=0; j<strlen(eptr[i].number); j++){
+                            if(isdigit(eptr[i].number[j]) == 0){
+                                new_info_validation_flag=1;
+                                break;
+                            }
+                        }
+                        if(new_info_validation_flag){
+                            printf("Enter Valid Mobile Number, Only Digits.\n");
+                        }
+                    }
+                }while(new_info_validation_flag);
+    
+                do{
+                    new_info_validation_flag=0;
+    
+                    printf("Enter Email-ID: ");
+                    scanf("%s",eptr[i].email);
+    
+                    int len = strlen(eptr[i].email);
+                    char *at_position_ptr = strchr(eptr[i].email, '@');
+                    char *dot_position_ptr = strrchr(eptr[i].email, '.');
+    
+                    if(at_position_ptr == NULL || dot_position_ptr == NULL){
+                        if(at_position_ptr == NULL){
+                            printf("Invalid Email, must contain '@'\n");
+                        }
+                        else{
+                            printf("Invalid Email, must contain '.'\n");
+                        }
+                        new_info_validation_flag=1;
+                    }
+                    else if(at_position_ptr > dot_position_ptr){
+                        new_info_validation_flag=1;
+                        printf("Invalid Email, doesn't contain proper domain\n");
+                    }
+                    else if(len < 7){
+                        new_info_validation_flag=1;
+                        printf("Invalid Email, too short.\n");
+                    }
+                    else if(strcmp(&eptr[i].email[len-4], ".com") != 0){
+                        new_info_validation_flag=1;
+                        printf("Invalid Email, must end with .com\n");
+                    }
+                }while(new_info_validation_flag);
+    
                 printf("\nContact Edited Succesfully\n");
                 printf("Returning to main menu...\n");
                 sleep(1);
-                
+    
                 edit_flag=1;
             }
         }
-        if(!edit_flag) printf("Couldn't find any contact with name %s\n",edit_email);
+        if(!edit_flag) printf("Couldn't find any contact with Mobile Number %s\n",edit_number);
+
+        break;
+    }  
+    
+    case 3:{
+        do{
+            validaion_edit_flag=0;
+
+            printf("Enter the Email-ID: ");
+            scanf(" %[^\n]",edit_email);
+
+            int len = strlen(edit_email);
+            char *at_position_ptr = strchr(edit_email, '@');
+            char *dot_position_ptr = strrchr(edit_email, '.');
+
+            if(at_position_ptr == NULL || dot_position_ptr == NULL){
+                if(at_position_ptr == NULL){
+                    printf("Invalid Email, must contain '@'\n");
+                }
+                else{
+                    printf("Invalid Email, must contain '.'\n");
+                }
+                validaion_edit_flag=1;
+            }
+            else if(at_position_ptr > dot_position_ptr){
+                validaion_edit_flag=1;
+                printf("Invalid Email, doesn't contain proper domain\n");
+            }
+            else if(len < 7){
+                validaion_edit_flag=1;
+                printf("Invalid Email, too short.\n");
+            }
+            else if(strcmp(&edit_email[len-4], ".com") != 0){
+                validaion_edit_flag=1;
+                printf("Invalid Email, must end with .com\n");
+            }
+        }while(validaion_edit_flag);
+
+        for(int i=0;i<size;i++){
+            if(strcmp(eptr[i].email,edit_email) == 0){
+                printf("\nEnter New Details Below:\n");
+
+                do{
+                    new_info_validation_flag=0;
+
+                    printf("Enter Name: ");
+                    scanf(" %[^\n]",eptr[i].name);
+
+                    for(int j=0; j<strlen(eptr[i].name); j++){
+                        if(isalpha(eptr[i].name[j]) == 0 && eptr[i].name[j] != ' '){
+                            new_info_validation_flag=1;
+                            break;
+                        }
+                    }
+                    if(new_info_validation_flag){
+                        printf("Enter Valid Name, Only letters allowed.\n");
+                    }
+                }while(new_info_validation_flag);
+
+                do{
+                    new_info_validation_flag=0;
+
+                    printf("Enter Mobile Number: ");
+                    scanf("%s",eptr[i].number);
+
+                    if(strlen(eptr[i].number) != 10){
+                        if(strlen(eptr[i].number)>10){
+                            printf("Length must not exceed 10.\n");
+                        }
+                        else if(strlen(eptr[i].number)<10){
+                            printf("Length must not be less than 10.\n");
+                        }
+                        new_info_validation_flag=1;
+                    }
+                    else{
+                        for(int j=0; j<strlen(eptr[i].number); j++){
+                            if(isdigit(eptr[i].number[j]) == 0){
+                                new_info_validation_flag=1;
+                                break;
+                            }
+                        }
+                        if(new_info_validation_flag){
+                            printf("Enter Valid Mobile Number, Only Digits.\n");
+                        }
+                    }
+                }while(new_info_validation_flag);
+
+                do{
+                    new_info_validation_flag=0;
+
+                    printf("Enter Email-ID: ");
+                    scanf("%s",eptr[i].email);
+
+                    int len = strlen(eptr[i].email);
+                    char *at_position_ptr = strchr(eptr[i].email, '@');
+                    char *dot_position_ptr = strrchr(eptr[i].email, '.');
+
+                    if(at_position_ptr == NULL || dot_position_ptr == NULL){
+                        if(at_position_ptr == NULL){
+                            printf("Invalid Email, must contain '@'\n");
+                        }
+                        else{
+                            printf("Invalid Email, must contain '.'\n");
+                        }
+                        new_info_validation_flag=1;
+                    }
+                    else if(at_position_ptr > dot_position_ptr){
+                        new_info_validation_flag=1;
+                        printf("Invalid Email, doesn't contain proper domain\n");
+                    }
+                    else if(len < 7){
+                        new_info_validation_flag=1;
+                        printf("Invalid Email, too short.\n");
+                    }
+                    else if(strcmp(&eptr[i].email[len-4], ".com") != 0){
+                        new_info_validation_flag=1;
+                        printf("Invalid Email, must end with .com\n");
+                    }
+                }while(new_info_validation_flag);
+
+                printf("\nContact Edited Succesfully\n");
+                printf("Returning to main menu...\n");
+                sleep(1);
+
+                edit_flag=1;
+            }
+        }
+        if(!edit_flag) printf("Couldn't find any contact with Email-ID %s\n",edit_email);
         break;
     }
 
@@ -438,7 +940,7 @@ void search_contacts(struct Contacts *eptr){
                     if(at_position_ptr == NULL){
                         printf("Invalid Email, must contain '@'\n");
                     }
-                    else{
+                    else{   
                         printf("Invalid Email, must contain '.'\n");
                     }
                     search_contacts_error_flag=1;
@@ -483,12 +985,16 @@ void search_contacts(struct Contacts *eptr){
 }
 
 
-/*
-Validations:
-    -
+/* Completed
+Validations: 
+    - name_count if 1, greater than 1, or less than 1(0);
+    - same validations as in the create_contacts
 */
 void delete_contact(struct Contacts *eptr,int size){
     int delete_flag=0;
+    int validation_flag=0;
+    int name_count=0;
+    int sub_user_delete_option=0;
     int user_delete_option=0;
     int index=0;
     char delete_confirmation;
@@ -502,42 +1008,226 @@ void delete_contact(struct Contacts *eptr,int size){
 
     switch(user_delete_option){
         case 1:{
-            printf("Enter Name: ");
-            scanf(" %[^\n]",delete_name);
+
+            do{
+                validation_flag=0;
+
+                printf("Enter Name: ");
+                scanf(" %[^\n]",delete_name);
+
+                for(int i=0;i<strlen(delete_name);i++){
+                    if(isalpha(delete_name[i]) == 0 && delete_name[i] != ' '){
+                        validation_flag=1;
+                        break;
+                    }
+                }
+                if(validation_flag){
+                    printf("Enter Valid Name, Only letters allowed.\n");
+                }
+            }while(validation_flag);
 
             for(int i=0;i<size;i++){
                 if(strcmp(eptr[i].name,delete_name) == 0){
-                    printf("Found Contact : %s %s %s\n",eptr[i].name,eptr[i].number,eptr[i].email);
-                    delete_flag=1;
-                    index=i;
-                    break;
+                    name_count++;
                 }
             }
-            if(delete_flag){
-                printf("Are you sure you want to delete this contact?\n(Y/n):");
-                scanf(" %c",&delete_confirmation);
-    
-                if(delete_confirmation == 'Y' || delete_confirmation == 'y'){
-                    for(int i=index;i<size-1;i++){
-                        strcpy(eptr[i].name,eptr[i+1].name);
-                        strcpy(eptr[i].number,eptr[i+1].number);
-                        strcpy(eptr[i].email,eptr[i+1].email);
+
+            if(name_count > 1){
+                printf("\nThere are %d contacts with the same name as '%s'\n",name_count,delete_name);
+                list_all(eptr);
+                printf("\nDelete the contact by searching for Mobile Number or Email instead\n");
+
+                printf("1. Mobile Number\n2. Email-ID\nSelect any of the above options: ");
+                scanf("%d",&sub_user_delete_option);
+
+                switch(sub_user_delete_option){
+                    case 1:{
+
+                        do{
+                            validation_flag=0;
+
+                            printf("Enter the Mobile Number: ");
+                            scanf(" %[^\n]",delete_number);
+
+                            if(strlen(delete_number) != 10){
+                                if(strlen(delete_number)>10){
+                                    printf("Length must not exceed 10.\n");
+                                }
+                                else if(strlen(delete_number)<10){
+                                    printf("Length must not be less than 10.\n");
+                                }
+                                validation_flag=1;
+                            }
+                            else{
+                                for(int i=0;i<strlen(delete_number);i++){
+                                    if(isdigit(delete_number[i]) == 0){
+                                        validation_flag=1;
+                                        break;
+                                    }
+                                }
+                                if(validation_flag){
+                                    printf("Enter Valid Mobile Number, Only Digits.\n");
+                                }
+                            }
+                        }while(validation_flag);
+
+                        for(int i=0;i<size;i++){
+                            if(strcmp(eptr[i].number,delete_number) == 0){
+                                printf("Found Contact : %s %s %s\n",eptr[i].name,eptr[i].number,eptr[i].email);
+                                delete_flag=1;
+                                index=i;
+                                break;
+                            }
+                        }
+                        if(delete_flag){
+                            printf("Are you sure you want to delete this contact?\n(Y/n):");
+                            scanf(" %c",&delete_confirmation);
+
+                            if(delete_confirmation == 'Y' || delete_confirmation == 'y'){
+                                for(int i=index;i<size-1;i++){
+                                    strcpy(eptr[i].name,eptr[i+1].name);
+                                    strcpy(eptr[i].number,eptr[i+1].number);
+                                    strcpy(eptr[i].email,eptr[i+1].email);
+                                }
+                                printf("\nContact Deleted\n");
+                                printf("Returning to main menu...\n");
+                                sleep(1);
+                                contact_count--;
+                            }
+                            else printf("Deletion Cancelled\n");
+                        }
+                        else printf("No contact found with the Number '%s'\n",delete_number);
+                        break;
                     }
-                    printf("\nContact Deleted\n");
-                    printf("Returning to main menu...\n");
-                    sleep(1);
-                    contact_count--;
+
+                    case 2:{
+
+                        do{
+                            validation_flag=0;
+
+                            printf("Enter the Email-ID: ");
+                            scanf(" %[^\n]",delete_email);
+
+                            int len = strlen(delete_email);
+                            char *at_position_ptr = strchr(delete_email, '@');
+                            char *dot_position_ptr = strrchr(delete_email, '.');
+
+                            if(at_position_ptr == NULL || dot_position_ptr == NULL){
+                                if(at_position_ptr == NULL){
+                                    printf("Invalid Email, must contain '@'\n");
+                                }
+                                else{
+                                    printf("Invalid Email, must contain '.'\n");
+                                }
+                                validation_flag=1;
+                            }
+                            else if(at_position_ptr > dot_position_ptr){
+                                validation_flag=1;
+                                printf("Invalid Email, doesn't contain proper domain\n");
+                            }
+                            else if(len < 7){
+                                validation_flag=1;
+                                printf("Invalid Email, too short.\n");
+                            }
+                            else if(strcmp(&delete_email[len-4], ".com") != 0){
+                                validation_flag=1;
+                                printf("Invalid Email, must end with .com\n");
+                            }
+                        }while(validation_flag);
+
+                        for(int i=0;i<size;i++){
+                            if(strcmp(eptr[i].email,delete_email) == 0){
+                                printf("Found Contact : %s %s %s\n",eptr[i].name,eptr[i].number,eptr[i].email);
+                                delete_flag=1;
+                                index=i;
+                                break;
+                            }
+                        }
+                        if(delete_flag){
+                            printf("Are you sure you want to delete this contact?\n(Y/n):");
+                            scanf(" %c",&delete_confirmation);
+
+                            if(delete_confirmation == 'Y' || delete_confirmation == 'y'){
+                                for(int i=index;i<size-1;i++){
+                                    strcpy(eptr[i].name,eptr[i+1].name);
+                                    strcpy(eptr[i].number,eptr[i+1].number);
+                                    strcpy(eptr[i].email,eptr[i+1].email);
+                                }
+                                printf("\nContact Deleted\n");
+                                printf("Returning to main menu...\n");
+                                sleep(1);
+                                contact_count--;
+                            }
+                            else printf("Deletion Cancelled\n");
+                        }
+                        else printf("No contact found with the Mail-ID '%s'\n",delete_email);
+                        break;
+                    }
                 }
-                else printf("Deletion Cancelled\n");
             }
-            else printf("No contact found with the name '%s'\n",delete_name);
+            else if(name_count == 1){
+                for(int i=0;i<size;i++){
+                    if(strcmp(eptr[i].name,delete_name) == 0){
+                        printf("Found Contact : %s %s %s\n",eptr[i].name,eptr[i].number,eptr[i].email);
+                        delete_flag=1;
+                        index=i;
+                        break;
+                    }
+                }
+                if(delete_flag){
+                    printf("Are you sure you want to delete this contact?\n(Y/n):");
+                    scanf(" %c",&delete_confirmation);
+
+                    if(delete_confirmation == 'Y' || delete_confirmation == 'y'){
+                        for(int i=index;i<size-1;i++){
+                            strcpy(eptr[i].name,eptr[i+1].name);
+                            strcpy(eptr[i].number,eptr[i+1].number);
+                            strcpy(eptr[i].email,eptr[i+1].email);
+                        }
+                        printf("\nContact Deleted\n");
+                        printf("Returning to main menu...\n");
+                        sleep(1);
+                        contact_count--;
+                    }
+                    else printf("Deletion Cancelled\n");
+                }
+            }
+            else{
+                printf("No contact found with the name '%s'\n",delete_name);
+            }
 
             break;
         }
 
         case 2:{
-            printf("Enter the Mobile Number: ");
-            scanf(" %[^\n]",delete_number);
+
+            do{
+                validation_flag=0;
+
+                printf("Enter the Mobile Number: ");
+                scanf(" %[^\n]",delete_number);
+
+                if(strlen(delete_number) != 10){
+                    if(strlen(delete_number)>10){
+                        printf("Length must not exceed 10.\n");
+                    }
+                    else if(strlen(delete_number)<10){
+                        printf("Length must not be less than 10.\n");
+                    }
+                    validation_flag=1;
+                }
+                else{
+                    for(int i=0;i<strlen(delete_number);i++){
+                        if(isdigit(delete_number[i]) == 0){
+                            validation_flag=1;
+                            break;
+                        }
+                    }
+                    if(validation_flag){
+                        printf("Enter Valid Mobile Number, Only Digits.\n");
+                    }
+                }
+            }while(validation_flag);
 
             for(int i=0;i<size;i++){
                 if(strcmp(eptr[i].number,delete_number) == 0){
@@ -550,7 +1240,7 @@ void delete_contact(struct Contacts *eptr,int size){
             if(delete_flag){
                 printf("Are you sure you want to delete this contact?\n(Y/n):");
                 scanf(" %c",&delete_confirmation);
-    
+
                 if(delete_confirmation == 'Y' || delete_confirmation == 'y'){
                     for(int i=index;i<size-1;i++){
                         strcpy(eptr[i].name,eptr[i+1].name);
@@ -564,15 +1254,46 @@ void delete_contact(struct Contacts *eptr,int size){
                 }
                 else printf("Deletion Cancelled\n");
             }
-            else printf("No contact found with the Number '%s'\n",delete_number);       
+            else printf("No contact found with the Number '%s'\n",delete_number);
 
             break;
         }
         
         case 3:{
-            printf("Enter the Mail-ID: ");
-            scanf(" %[^\n]",delete_email);
-    
+
+            do{
+                validation_flag=0;
+
+                printf("Enter the Mail-ID: ");
+                scanf(" %[^\n]",delete_email);
+
+                int len = strlen(delete_email);
+                char *at_position_ptr = strchr(delete_email, '@');
+                char *dot_position_ptr = strrchr(delete_email, '.');
+
+                if(at_position_ptr == NULL || dot_position_ptr == NULL){
+                    if(at_position_ptr == NULL){
+                        printf("Invalid Email, must contain '@'\n");
+                    }
+                    else{
+                        printf("Invalid Email, must contain '.'\n");
+                    }
+                    validation_flag=1;
+                }
+                else if(at_position_ptr > dot_position_ptr){
+                    validation_flag=1;
+                    printf("Invalid Email, doesn't contain proper domain\n");
+                }
+                else if(len < 7){
+                    validation_flag=1;
+                    printf("Invalid Email, too short.\n");
+                }
+                else if(strcmp(&delete_email[len-4], ".com") != 0){
+                    validation_flag=1;
+                    printf("Invalid Email, must end with .com\n");
+                }
+            }while(validation_flag);
+
             for(int i=0;i<size;i++){
                 if(strcmp(eptr[i].email,delete_email) == 0){
                     printf("Found Contact : %s %s %s\n",eptr[i].name,eptr[i].number,eptr[i].email);
@@ -584,7 +1305,7 @@ void delete_contact(struct Contacts *eptr,int size){
             if(delete_flag){
                 printf("Are you sure you want to delete this contact?\n(Y/n):");
                 scanf(" %c",&delete_confirmation);
-        
+    
                 if(delete_confirmation == 'Y' || delete_confirmation == 'y'){
                     for(int i=index;i<size-1;i++){
                         strcpy(eptr[i].name,eptr[i+1].name);
@@ -606,7 +1327,7 @@ void delete_contact(struct Contacts *eptr,int size){
         case 4:{
             user_delete_option=0;
             printf("Returning to Main Menu\n");
-            sleep(1);       // 1 second
+            sleep(1);
             break;
         }
         
