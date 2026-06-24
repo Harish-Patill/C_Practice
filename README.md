@@ -163,8 +163,8 @@ Projects
 
     1. Add contacts             : Completed;
     2. Search contacts          : Completed;
-    3. Edit contacts            : Validation remaining
-    4. Delete contacts          : Validation remaining
+    3. Edit contacts            : Completed;
+    4. Delete contacts          : Completed;
     5. Display contacts         : Completed;
     6. Save and Exit            : 
     7. Exit                     : Completed;
