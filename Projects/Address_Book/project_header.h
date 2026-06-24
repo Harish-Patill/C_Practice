@@ -3,10 +3,10 @@ Will include inbuilt header files in this file alone so that we can just import 
 the header files there
 */
 
-#include<stdio.h>                               
-#include<string.h>
-#include<unistd.h>
-#include<ctype.h>
+#include<stdio.h>   // Input/output                                    
+#include<string.h>  // String manipulation      → strcpy(), strlen()
+#include<unistd.h>  // → sleep()
+#include<ctype.h>   // Char checks/conversions  → isalnum(), isalpha(), isdigit()
 
 struct Contacts{
     char name[50];

@@ -88,7 +88,6 @@ void create_contacts(struct Contacts *eptr,int max_size){
 
         }while(add_contacts_flag);
 
-
         do{
             add_contacts_flag=0;
 
@@ -115,6 +114,10 @@ void create_contacts(struct Contacts *eptr,int max_size){
             else if(len < 7){                                                   // minimum: a@b.com = 7 chars
                 add_contacts_flag=1;
                 printf("Invalid Email, too short.\n");
+            }
+            else if((dot_position_ptr - at_position_ptr) < 2){                  // check for proper domain
+                add_contacts_flag=1;
+                printf("Invalid Email, doesn't contain domain\n");
             }
             else if(strcmp(&eptr[contact_count].email[len-4], ".com") != 0){    // chekck email ends with .com
                 add_contacts_flag=1;
@@ -298,6 +301,10 @@ void edit_contacts(struct Contacts *eptr,int size){
                                         printf("Invalid Email, must contain '.'\n");
                                     }
                                     new_info_validation_flag=1;
+                                }
+                                else if((dot_position_ptr - at_position_ptr) < 2){                  // check for proper domain
+                                    new_info_validation_flag=1;
+                                    printf("Invalid Email, doesn't contain domain\n");
                                 }   
                                 else if(at_position_ptr > dot_position_ptr){                            // imporper domain 
                                     new_info_validation_flag=1;
@@ -347,7 +354,11 @@ void edit_contacts(struct Contacts *eptr,int size){
                                 printf("Invalid Email, must contain '.'\n");
                             }
                             new_info_validation_flag=1;
-                        }   
+                        }
+                        else if((dot_position_ptr - at_position_ptr) < 2){                  // domain check
+                            new_info_validation_flag=1;
+                            printf("Invalid Email, doesn't contain domain\n");
+                        }      
                         else if(at_position_ptr > dot_position_ptr){                            // imporper domain 
                             new_info_validation_flag=1;
                             printf("Invalid Email, doesn't contain proper domain\n");
@@ -441,6 +452,10 @@ void edit_contacts(struct Contacts *eptr,int size){
                                     new_info_validation_flag=1;
                                     printf("Invalid Email, doesn't contain proper domain\n");
                                 }
+                                else if((dot_position_ptr - at_position_ptr) < 2){                  // domain check
+                                    new_info_validation_flag=1;
+                                    printf("Invalid Email, doesn't contain domain\n");
+                                } 
                                 else if(len < 7){                                                       // invalid as it is too short
                                     new_info_validation_flag=1;
                                     printf("Invalid Email, too short.\n");
@@ -544,6 +559,10 @@ void edit_contacts(struct Contacts *eptr,int size){
                             new_info_validation_flag=1;
                             printf("Invalid Email, doesn't contain proper domain\n");
                         }
+                        else if((dot_position_ptr - at_position_ptr) < 2){                  // domain check
+                            new_info_validation_flag=1;
+                            printf("Invalid Email, doesn't contain domain\n");
+                        } 
                         else if(len < 7){                                                       // invalid as it is too short
                             new_info_validation_flag=1;
                             printf("Invalid Email, too short.\n");
@@ -675,6 +694,10 @@ void edit_contacts(struct Contacts *eptr,int size){
                         new_info_validation_flag=1;
                         printf("Invalid Email, doesn't contain proper domain\n");
                     }
+                    else if((dot_position_ptr - at_position_ptr) < 2){                  // domain check
+                        new_info_validation_flag=1;
+                        printf("Invalid Email, doesn't contain domain\n");
+                    } 
                     else if(len < 7){
                         new_info_validation_flag=1;
                         printf("Invalid Email, too short.\n");
@@ -717,6 +740,10 @@ void edit_contacts(struct Contacts *eptr,int size){
                 }
                 validaion_edit_flag=1;
             }
+            else if((dot_position_ptr - at_position_ptr) < 2){                  // domain check
+                validaion_edit_flag=1;
+                printf("Invalid Email, doesn't contain domain\n");
+            } 
             else if(at_position_ptr > dot_position_ptr){
                 validaion_edit_flag=1;
                 printf("Invalid Email, doesn't contain proper domain\n");
@@ -798,6 +825,10 @@ void edit_contacts(struct Contacts *eptr,int size){
                             printf("Invalid Email, must contain '.'\n");
                         }
                         new_info_validation_flag=1;
+                    }
+                    else if((dot_position_ptr - at_position_ptr) < 2){                  // domain check
+                        new_info_validation_flag=1;
+                        printf("Invalid Email, doesn't contain domain\n");
                     }
                     else if(at_position_ptr > dot_position_ptr){
                         new_info_validation_flag=1;
@@ -950,7 +981,11 @@ void search_contacts(struct Contacts *eptr){
                         printf("Invalid Email, must contain '.'\n");
                     }
                     search_contacts_error_flag=1;
-                }   
+                }
+                else if((dot_position_ptr - at_position_ptr) < 2){                  // domain check
+                    search_contacts_error_flag=1;
+                    printf("Invalid Email, doesn't contain domain\n");
+                }
                 else if(at_position_ptr > dot_position_ptr){                            // imporper domain 
                     search_contacts_error_flag=1;
                     printf("Invalid Email, doesn't contain proper domain\n");
@@ -1127,6 +1162,10 @@ void delete_contact(struct Contacts *eptr,int size){
                                 }
                                 validation_flag=1;
                             }
+                            else if((dot_position_ptr - at_position_ptr) < 2){                  // domain check
+                                validation_flag=1;
+                                printf("Invalid Email, doesn't contain domain\n");
+                            }
                             else if(at_position_ptr > dot_position_ptr){
                                 validation_flag=1;
                                 printf("Invalid Email, doesn't contain proper domain\n");
@@ -1290,6 +1329,10 @@ void delete_contact(struct Contacts *eptr,int size){
                     validation_flag=1;
                     printf("Invalid Email, doesn't contain proper domain\n");
                 }
+                else if((dot_position_ptr - at_position_ptr) < 2){                  // domain check
+                    validation_flag=1;
+                    printf("Invalid Email, doesn't contain domain\n");
+                }
                 else if(len < 7){
                     validation_flag=1;
                     printf("Invalid Email, too short.\n");
@@ -1352,7 +1395,7 @@ Working:
 void save_contacts(struct Contacts *eptr){
     FILE *fptr = fopen("contacts.txt","w");
 
-    if(fptr == NULL){
+    if(fptr == NULL){                       // can get NULL if -No write permission in that directory -Disk is full -Invalid path
         printf("Error saving contacts!\n");
         return;
     }
@@ -1373,9 +1416,9 @@ Working:
     - If file doesn't exist, just returns
 */
 void load_contacts(struct Contacts *eptr){
-    FILE *fptr = fopen("contacts.txt","r");
+    FILE *fptr = fopen("contacts.txt","r");     // fopen will return any valid address if the fopen is succesful
 
-    if(fptr == NULL){
+    if(fptr == NULL){       // fopen returns NULL in case of -file not opening  -file not existing
         return;  
     }
 
