@@ -1,18 +1,5 @@
 #include "project_header.h"
 
-/*
-progress so far:
-
-1. Add contacts             : Completed;
-2. Search contacts          : Completed;
-3. Edit contacts            : Validation remaining
-4. Delete contacts          : Validation remaining
-5. Display contacts         : Completed;
-6. Save and exit            :
-7. Exit                     : Completed;
-*/
-
-
 struct Contacts contact_details[100];
 int contact_count=0;
 int max_size=100;
@@ -20,6 +7,8 @@ int max_size=100;
 int main(){
     int flag=1;
     int main_option=0;
+
+    load_contacts(contact_details);
 
     printf("\n\t\t:: Address Book ::");
     while(flag){
@@ -51,19 +40,27 @@ int main(){
                 list_all(contact_details);
                 break;
             }
+
+            case 6:{
+                save_contacts(contact_details);
+                printf("\n\t\t :: Thank You ::\n");
+
+                flag=0;
+                break;
+            }
+
             case 7:{
                 flag=0;
                 printf("\n\t\t :: Thank You ::\n");
                 break;
             }
+
+            default:
+                printf("Invalid Input!");
+                break;
         }
         
-
-
-
-
     }
-
 
     return 0;
 }

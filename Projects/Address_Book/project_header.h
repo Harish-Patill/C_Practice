@@ -5,7 +5,7 @@ the header files there
 
 #include<stdio.h>                               
 #include<string.h>
-#include <unistd.h>
+#include<unistd.h>
 #include<ctype.h>
 
 struct Contacts{
@@ -19,6 +19,8 @@ extern int contact_count;
 
 void create_contacts(struct Contacts *eptr,int size);       //size needed to keep check of the limit
 void edit_contacts(struct Contacts *eptr,int size);
-void list_all(struct Contacts *eptr);                       //size not needed
-void search_contacts(struct Contacts *eptr);                //size not needed
+void list_all(struct Contacts *eptr);                       
+void search_contacts(struct Contacts *eptr);                
 void delete_contact(struct Contacts *eptr,int size);
+void save_contacts(struct Contacts *eptr);
+void load_contacts(struct Contacts *eptr);

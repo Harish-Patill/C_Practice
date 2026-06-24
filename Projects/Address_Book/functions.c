@@ -1335,3 +1335,46 @@ void delete_contact(struct Contacts *eptr,int size){
         printf("Enter a Valid Input!, Try again\n");
     }
 }
+
+
+/* Completed
+Working:
+    - Opens contacts.txt in write mode (wipes it)
+    - Writes the entire array from index 0 to contact_count back to the file
+    - Closes the file
+*/
+void save_contacts(struct Contacts *eptr){
+    FILE *fptr = fopen("contacts.txt","w");
+
+    if(fptr == NULL){
+        printf("Error saving contacts!\n");
+        return;
+    }
+
+    for(int i=0;i<contact_count;i++){
+        fprintf(fptr,"%s\n%s\n%s\n",eptr[i].name,eptr[i].number,eptr[i].email);
+    }
+    fclose(fptr);
+    printf("Contacts Saved Successfully\n");
+}
+
+
+/* Completed
+Working:
+    - Opens contacts.txt in read mode
+    - Reads name, number, email
+    - Increments contact_count for each contact read
+    - If file doesn't exist, just returns
+*/
+void load_contacts(struct Contacts *eptr){
+    FILE *fptr = fopen("contacts.txt","r");
+
+    if(fptr == NULL){
+        return;  
+    }
+
+    while(fscanf(fptr," %[^\n] %[^\n] %[^\n]",eptr[contact_count].name,eptr[contact_count].number,eptr[contact_count].email) == 3){
+        contact_count++;
+    }
+    fclose(fptr);
+}
