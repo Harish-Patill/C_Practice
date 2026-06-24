@@ -194,7 +194,13 @@ void edit_contacts(struct Contacts *eptr,int size){
         }
         if(name_count>1){                                                                                   // when multiple contacts with same name
             printf("\nThere are %d contacts with the same name as '%s'\n",name_count,edit_name);
-            list_all(eptr);
+
+            for(int i=0;i<size;i++){
+                if(strcmp(eptr[i].name,edit_name) == 0){
+                    printf("%s %s %s\n",eptr[i].name,eptr[i].number,eptr[i].email);
+                }
+            }
+            
             printf("\nEdit the contact by searching for Mobile Number or Email instead\n");
             
             printf("1. Mobile Number\n2. Email-ID\nSelect any of the above options: ");
