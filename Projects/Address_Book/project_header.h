@@ -1,11 +1,8 @@
-/*
-Will include inbuilt header files in this file alone so that we can just import this .h file in the rest of the files instead of importing
-the header files there
-*/
+// Will include all the required header files in this file alone so that we can import this .h file in the rest of the files
 
 #include<stdio.h>   // Input/output                                    
 #include<string.h>  // String manipulation      → strcpy(), strlen()
-#include<unistd.h>  // → sleep()
+#include<unistd.h>  // For linux and mac OS     → sleep()
 #include<ctype.h>   // Char checks/conversions  → isalnum(), isalpha(), isdigit()
 
 struct Contacts{
