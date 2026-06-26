@@ -8,18 +8,29 @@ WAP to reverse each word in a string.
 
 #include<stdio.h>
 void reverse_string(char *string){
-    int len=0;
-    for(len=0;string[len] != '\0';len++){}
-
     char temp;
-    for(int i=0;i<len/2;i++){
-        temp=string[i];
-        string[i]=string[len-i-1];
-        string[len-i-1]=temp;
+    int string_len=0;
+    int start=0;
+    int end=0;
+
+    for(string_len=0;string[string_len] != '\0'; string_len++){}
+
+    for (int i=0;i<=string_len;i++) {
+        if (string[i] == ' ' || string[i] == '\0') {
+            int end = i;
+
+            for(int i=start;i<start+(end-start)/2;i++){
+                temp=string[i];
+                string[i]=string[end - 1 - (i - start)];
+                string[end - 1 - (i - start)]=temp;
+            }
+            start = i + 1;
+        }
     }
+
 }
 int main(){
-    char string[50];
+    char string[100];
 
     printf("  Enter the String: ");
     scanf("%[^\n]",string);
