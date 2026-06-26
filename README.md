@@ -155,7 +155,10 @@ gcc filename.c -o output
 16-WAP to print all non-repeating characters in a string.
 17-WAP to check whether a string is a palindrome or not.
 18-WAP to count the number of special characters in a string.
------------------------------------------------------------------------------------------------------------------------------------------
+19-WAP to to remove multiple spaces from a string.
+20-WAP to reverse each word in a string.
+
+ -----------------------------------------------------------------------------------------------------------------------------------------
 
 Projects
 
