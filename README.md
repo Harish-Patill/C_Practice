@@ -160,8 +160,30 @@ gcc filename.c -o output
 19-WAP to to remove multiple spaces from a string.
 20-WAP to reverse each word in a string.
 
- -----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+13. Bitwise Operators
 
+01-WAP to set the nth bit of a number.
+02-WAP to clear the nth bit of a number.
+03-WAP to toggle the nth bit of a number.
+04-WAP to set n bits from the LSB of a number.
+05-WAP to clear n bits from the LSB of a number.
+06-WAP to toggle n bits from the LSB of a number.
+07-WAP to set n bits of a number from a given position.
+08-WAP to clear n bits of a number from a given position.
+09-WAP to toggle n bits of a number from a given position.
+10-WAP to get the nth bit of a number.
+11-WAP to check whether a number is even or odd using bitwise operators.
+12-WAP to print the binary representation of a number.
+13-WAP to count the number of set bits and clear bits in a number.
+14-WAP to count the number of leading zeros in the binary representation of a number.
+15-WAP to count the number of trailing zeros in the binary representation of a number.
+16-WAP to print the binary of a number using right shift.
+17-WAP to check if a number is a power of two.
+18-WAP to find the number of bit swaps required to convert num1 to num2.
+19-WAP to swap the nibbles of a byte.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
 Projects
 
 01-Address Book : (Status - Completed)
