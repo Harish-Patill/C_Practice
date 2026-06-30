@@ -109,6 +109,8 @@ gcc filename.c -o output
 15-WAP to print duplicate elements from two arrays.
 16-WAP to print unique elements from two arrays.
 17-WAP to print the number of even and odd elements from the array.
+18-WAP to print the unique elements from an array.
+19-WAP to print the repeated elements from an array.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 9. Functions
