@@ -1,5 +1,5 @@
 #include<stdio.h>
-int minimum(int arr[],int size){
+int array_min(int arr[],int size){
     int min=arr[0];
     for(int i=0;i<size;i++){
         if(arr[i]<min){
@@ -9,7 +9,7 @@ int minimum(int arr[],int size){
     return min;
 }
 
-int maximum(int arr[],int size){
+int array_max(int arr[],int size){
     int max=arr[0];
     for(int i=0;i<size;i++){
         if(arr[i]>max){
@@ -21,23 +21,17 @@ int maximum(int arr[],int size){
 
 int main(){
     int size=0;
-    printf("Enter the array size: ");
+    printf("Enter array size: ");
     scanf("%d",&size);
 
     int arr[size];
-    printf("Enter array elemenets: ");
+    printf("Enter the array elemets: ");
     for(int i=0;i<size;i++){
         scanf("%d",&arr[i]);
     }
 
-    int min=minimum(arr,size);
-    int max=maximum(arr,size);
-
-
-
-    printf("The max element: %d\n",max);
-    printf("The min element: %d\n",min);
-
+    printf("Minimum element from the array: %d\n",array_min(arr,size));               
+    printf("Maximun element from the array: %d\n",array_max(arr,size));               
 
     return 0;
 }
