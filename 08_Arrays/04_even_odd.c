@@ -1,38 +1,38 @@
 #include<stdio.h>
-void even(int arr[],int size){
+void array_even(int arr[],int size){
     for(int i=0;i<size;i++){
-        if(arr[i]%2==0){
+        if(arr[i]%2 == 0){
             printf("%d ",arr[i]);
         }
     }
-
 }
 
-void odd(int arr[],int size){
+void array_odd(int arr[],int size){
     for(int i=0;i<size;i++){
-        if(arr[i]%2!=0){
+        if(arr[i]%2 != 0){
             printf("%d ",arr[i]);
         }
     }
+
 }
 
 int main(){
     int size=0;
-    printf("Enter the array size: ");
+    printf("Enter size: ");
     scanf("%d",&size);
 
     int arr[size];
-    printf("Enter array elements: ");
+    printf("Enter the array size: ");
     for(int i=0;i<size;i++){
         scanf("%d",&arr[i]);
     }
-    
-    printf("The odd  elements from the array are: ");
-    odd(arr,size);
+
+    printf("Even elements from the array : ");
+    array_even(arr,size);
     printf("\n");
     
-    printf("The even elements from the array are: ");
-    even(arr,size);
+    printf("Odd elements from the array  : ");
+    array_odd(arr,size);
     printf("\n");
 
     return 0;
