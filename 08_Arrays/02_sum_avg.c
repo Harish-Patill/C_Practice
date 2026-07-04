@@ -1,27 +1,25 @@
 #include<stdio.h>
-int summ(int arr[],int n){
+int arry_sum(int arr[],int size){
     int sum=0;
-    for(int i=0;i<n;i++){
+    for(int i=0;i<size;i++){
         sum=sum+arr[i];
     }
     return sum;
 }
 
-int main (){
+int main(){
     int size=0;
-    printf("Enter array size: ");
+    printf("Enter the array size: ");
     scanf("%d",&size);
 
     int arr[size];
-    printf("Enter array elements: ");
+    printf("Enter the array elements: ");
     for(int i=0;i<size;i++){
         scanf("%d",&arr[i]);
     }
 
-    int sum=summ(arr,size);
+    printf("The sum of the array elements: %d\n",arry_sum(arr,size));
+    printf("The avg of the array elements: %.2g\n",(arry_sum(arr,size))/(float)size);
 
-    printf("Sum of the array elements is %d, and the average is %d.",sum,sum/size);
-    printf("\n");
-
-
+    return 0;
 }
