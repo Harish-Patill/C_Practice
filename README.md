@@ -85,6 +85,9 @@ gcc filename.c -o output
 05-WAP to calculate the area of circle, rectangle, and triangle using a menu-driven program (switch case).
 -----------------------------------------------------------------------------------------------------------------------------------------
 6. Patterns
+    1. Star Patterns
+        01-Simple triangle.
+        02-Inverted triangle.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 7. While Loops
