@@ -1,15 +1,19 @@
 #include<stdio.h>
 int main(){
-    int size=0,temp=0,min,min_index;
-    printf("Enter the array size: ");
+    int size=0;
+    int min=0;
+    int min_index=0;
+    int temp=0;
+
+    printf("Size: ");
     scanf("%d",&size);
 
     int arr[size];
-    printf("Enter the array elements: ");
+    printf("Enter the array size: ");
     for(int i=0;i<size;i++){
         scanf("%d",&arr[i]);
     }
-
+    
     for(int i=0;i<size-1;i++){
         min=arr[i];
         min_index=i;
@@ -24,7 +28,7 @@ int main(){
         arr[min_index]=temp;
     }
 
-    printf("The array elemets after the sorting: ");
+    printf("The array Elements are: ");
     for(int i=0;i<size;i++){
         printf("%d ",arr[i]);
     }
