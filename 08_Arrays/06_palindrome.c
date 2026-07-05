@@ -1,20 +1,9 @@
 #include<stdio.h>
-int logic(int arr[], int size){
-    int flag=0;
-
-    for(int i=0;i<size/2;i++){
-        if(arr[i] != arr[size-1-i]){            //check the values till half for the array;
-            flag=1;
-            break;
-        }
-    }
-    
-    return flag;                                //return the flag value;
-}
-
 int main(){
+    int flag=0;
     int size=0;
-    printf("Enter array size: ");
+
+    printf("Size: ");
     scanf("%d",&size);
 
     int arr[size];
@@ -23,8 +12,58 @@ int main(){
         scanf("%d",&arr[i]);
     }
 
-    int flag=logic(arr,size);
+    for(int i=0;i<size/2;i++){
+        if(arr[i] != arr[size-i-1]){
+            flag=1;
+        }
+    }
 
-    if(flag == 1) printf("Array is NOT Palindrome\n");
-    else printf("Array IS Palindrome\n");
+    if(flag){
+        printf("The array is not Palindrome\n");
+        return 0;
+    }
+    printf("The array is Palindrome\n");
+
+    return 0;
 }
+
+/* 
+
+#include<stdio.h>
+
+int palindrome_logic(int arr[],int size){
+    int flag=0;
+    
+    for(int i=0;i<size/2;i++){
+        if(arr[i] != arr[size-i-1]){
+            flag=1;
+            break;
+        }
+    }
+    
+    return flag;
+}
+
+int main(){
+    int size=0;                                                                         // using a function;
+    
+    printf("Size: ");
+    scanf("%d",&size);
+    
+    int arr[size];
+    printf("Enter array elements: ");
+    for(int i=0;i<size;i++){
+        scanf("%d",&arr[i]);
+    }
+    
+    if(palindrome_logic(arr,size)){
+        printf("The array is not Palindrome\n");
+        return 0;
+    }
+    printf("The array is Palindrome\n");
+    
+    return 0;
+}
+
+
+*/
