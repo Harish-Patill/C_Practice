@@ -14,21 +14,21 @@ int main(){
     
     for(int i=0;i<size;i++){
         int count=0;
-        for(int j=0;j<size;j++){
-            if(arr[i] == arr[j]){
+        for(int j=0;j<i;j++){
+            if(arr[j] == arr[i]){
                 count++;
             }
         }
-        if(count){
+        if(count>1){
             temp=arr[i];
             arr[i]=arr[i+1];
             arr[i+1]=temp;
 
-            size;
+            size--;
         }   
     }
 
-    printf("The array elements: ");
+    printf("Array elements after removing the duplicate elements: ");
     for(int i=0;i<size;i++){
         printf("%d ",arr[i]);
     }
