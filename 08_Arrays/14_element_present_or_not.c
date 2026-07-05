@@ -1,38 +1,37 @@
 #include<stdio.h>
-int element_check(int arr[],int n,int element){
-    int flag=0;
 
-    for(int i=0;i<n;i++){
-        if(arr[i]==element){
-            flag=1;
-            break;
+int finding_element(int arr[],int size,int element){
+    for(int i=0;i<size;i++){
+        if(arr[i] == element){
+            return 1;
         }
     }
-    return flag;
+
+    return 0;
 }
 
 int main(){
     int size=0;
-    int element;
+    int element=0;
 
-    printf("Enter size: ");
+    printf("Size: ");
     scanf("%d",&size);
 
     int arr[size];
-    printf("Enter array elements: ");
+    printf("Enter the array elements: ");
     for(int i=0;i<size;i++){
         scanf("%d",&arr[i]);
     }
-    
-    printf("Enter Element you want to check: ");
+
+    printf("Enter the element you want to search: ");
     scanf("%d",&element);
 
-
+    if(finding_element(arr,size,element)){
+        printf("%d is Present in the array.\n",element);
+    }
+    else{
+        printf("%d is Not Present in the array\n",element);
+    }
     
-    int flag=element_check(arr,size,element);
-
-    if(flag) printf("ELEMENT is Present\n");
-    else printf("ELEMENT is NOT Present\n");
-
     return 0;
 }
