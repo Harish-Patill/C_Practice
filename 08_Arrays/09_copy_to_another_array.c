@@ -21,7 +21,7 @@ int main(){
     array_copying(arr,new_array,size);
     printf("The new array elements  : ");
     for(int i=0;i<size;i++){
-        printf("%d ",arr[i]);
+        printf("%d ",new_array[i]);
     }
     printf("\n");
     
