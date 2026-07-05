@@ -27,7 +27,7 @@ int main(){
     for(int i=0;i<num_len-1;i++){
         place=place*10;
     }
-    // printf("%d",place);
+    // printf("%d",place);  // for testing
 
     first_digit=num/place;
     last_digit=num%10;
