@@ -37,8 +37,8 @@ int main(){
 		printf("Both the array's are Not Equal\n");
 		return 0;
 	}
-	if(comparison(arr1,size2,arr2)){
-		printf("Both the array's are Not Equal ff\n");
+	if(comparison(arr1,size1,arr2)){
+		printf("Both the array's are Not Equal\n");
 		return 0;
 	}
 	printf("Both the array's are Equal\n");
