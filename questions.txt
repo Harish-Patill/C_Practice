@@ -82,11 +82,12 @@
 12-WAP to find the largest element form the array.
 13-WAP to find the smallest element form the array.
 14-WAP to find if a element is present in the array.
-15-WAP to print duplicate elements from two arrays.
+15-WAP to print common elements from two arrays.
 16-WAP to print unique elements from two arrays.
 17-WAP to print the number of even and odd elements from the array.
 18-WAP to print the unique elements from an array.
 19-WAP to print the repeated elements from an array.
+20-WAP to remove duplicate elements from an array.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 9. Functions
@@ -158,6 +159,10 @@
 17-WAP to check if a number is a power of two.
 18-WAP to find the number of bit swaps required to convert num1 to num2.
 19-WAP to swap the nibbles of a byte.
+-----------------------------------------------------------------------------------------------------------------------------------------
+15. Math
+
+01-WAP to reverse only the first and last digit of a number.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 Projects
