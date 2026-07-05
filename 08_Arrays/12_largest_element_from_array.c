@@ -1,30 +1,27 @@
 #include<stdio.h>
-int my_largest(int arr[], int n){
-    int largest=arr[0];
+int largest_element(int arr[],int size){
+    int max=arr[0];
 
-    for(int i=0;i<n;i++){
-        if(arr[i]>largest){
-            largest=arr[i];
+    for(int i=0;i<size;i++){
+        if(arr[i]>max){
+            max=arr[i];
         }
     }
-
-    return largest;
+    return max;
 }
 
 int main(){
     int size=0;
-    printf("Enter array size: ");
+    printf("Size: ");
     scanf("%d",&size);
 
     int arr[size];
-    printf("Enter array elements: ");
+    printf("Enter the array elements: ");
     for(int i=0;i<size;i++){
         scanf("%d",&arr[i]);
     }
 
-    int largest=my_largest(arr,size);
+    printf("The Largest element from the array: %d\n",largest_element(arr,size));
 
-    printf("The Largest Element from the array is %d\n",largest);
-    
     return 0;
 }
