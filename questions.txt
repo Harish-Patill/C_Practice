@@ -89,6 +89,8 @@
 19-WAP to print the repeated elements from an array.
 20-WAP to remove duplicate elements from an array.
 21-WAP to find the fequency of an element in a 1D array and multiply the frequency with the element.
+22-WAP to check if an array is sorted or not.
+23-WAP to print the nth largest element of an array.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 9. Functions
