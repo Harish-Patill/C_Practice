@@ -117,6 +117,9 @@ gcc filename.c -o output
 18-WAP to print the unique elements from an array.
 19-WAP to print the repeated elements from an array.
 20-WAP to remove duplicate elements from an array.
+21-WAP to find the fequency of an element in a 1D array and multiply the frequency with the element.
+22-WAP to check if an array is sorted or not.
+23-WAP to print the nth largest element of an array.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 9. Functions
@@ -192,6 +195,12 @@ gcc filename.c -o output
 15. Math
 
 01-WAP to reverse only the first and last digit of a number.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+16. 2D Arrays
+
+01-WAP to read and write elements for 2D array.
+02-WAP to find min and max value from 2D array.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 Projects
