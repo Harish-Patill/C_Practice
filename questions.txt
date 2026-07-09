@@ -91,6 +91,8 @@
 21-WAP to find the fequency of an element in a 1D array and multiply the frequency with the element.
 22-WAP to check if an array is sorted or not.
 23-WAP to print the nth largest element of an array.
+24-WAP to find the extra element between two arrays.
+25-WAP to find the equilibrium index of an array.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 9. Functions
