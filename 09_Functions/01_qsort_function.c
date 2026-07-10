@@ -6,7 +6,7 @@ int compare(const void *a,const void *b){
     int y=*(int *)b;
 
     return x-y;     // to sort in ascending order 
-    return y-x;     // to sort in descending order
+    return y-x;     // to sort in descending order  
 }
 
 int main(){
