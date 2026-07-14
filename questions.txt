@@ -144,6 +144,8 @@
 18-WAP to count the number of special characters in a string.
 19-WAP to to remove multiple spaces from a string.
 20-WAP to reverse each word in a string.
+21-WAP to remove duplicate characters in a string.
+22-WAP to replace a word in a string with a word from another string.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 13. Bitwise Operators
