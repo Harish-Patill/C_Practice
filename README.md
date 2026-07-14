@@ -206,7 +206,12 @@ gcc filename.c -o output
 
 01-WAP to read and write elements for 2D array.
 02-WAP to find min and max value from 2D array.
-
+03-WAP to print a 2D array in wave form .
+04-WAP to rotate a 2D array in 90 degree clockwise
+05-WAP to find 2D array row sum and column sum.
+06-WAP to find common numbers present in all rows of a 2D array.
+07-WAP to print the upper right 2d array elements.
+08-WAP to modify the original array and replace it with its transpose.
 -----------------------------------------------------------------------------------------------------------------------------------------
 Projects
 
