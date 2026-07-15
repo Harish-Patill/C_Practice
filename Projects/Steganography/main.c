@@ -14,12 +14,6 @@ int main(int argc, char *argv[]){
         printf("Insufficient Command Line Arguments\n");
         return e_failure;
     }
-
-
-
-
-
-
     
 }
 OperationType check_operation_type(char *symbol){
