@@ -5,14 +5,12 @@
 typedef unsigned int uint;
 
 /* Status will be used in fn. return type */
-typedef enum
-{
+typedef enum{
     e_failure,
     e_success
 } Status;
 
-typedef enum
-{
+typedef enum{
     e_encode,
     e_decode,
     e_unsupported

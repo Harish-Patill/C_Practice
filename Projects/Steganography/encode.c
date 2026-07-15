@@ -10,8 +10,7 @@
  * Description: In BMP Image, width is stored in offset 18,
  * and height after that. size is 4 bytes
  */
-uint get_image_size_for_bmp(FILE *fptr_image)
-{
+uint get_image_size_for_bmp(FILE *fptr_image){
     uint width, height;
     // Seek to 18th byte
     fseek(fptr_image, 18, SEEK_SET);
@@ -28,8 +27,7 @@ uint get_image_size_for_bmp(FILE *fptr_image)
     return width * height * 3;
 }
 
-uint get_file_size(FILE *fptr)
-{
+uint get_file_size(FILE *fptr){
     // Find the size of secret file data
 }
 
@@ -41,13 +39,42 @@ uint get_file_size(FILE *fptr)
  * Return Value: e_success or e_failure, on file errors
  */
 
-Status read_and_validate_encode_args(char *argv[], EncodeInfo *encInfo)
-{
-    
+Status read_and_validate_encode_args(char *argv[], EncodeInfo *encInfo){
+    char *ptr;
+
+    ptr=strstr(argv[2],".bmp");
+    if((ptr != NULL) && strcmp(ptr,".bmp") == 0){                                     // source image validation
+        encInfo->src_image_fname=argv[2];
+    }
+    else{
+        return e_failure;
+    }
+
+    ptr=strstr(argv[3],".txt");
+    if((ptr != NULL) && strcmp(ptr,".txt") == 0){                                     // secret file validation
+        encInfo->secret_fname=argv[3];
+    }
+    else{
+        return e_failure;
+    }
+
+    if(argv[4]==NULL){
+        encInfo->dest_image_fname="destination.bmp";
+    }
+    else{
+        ptr=strstr(argv[4],".bmp");
+        if((ptr != NULL) && (strcmp(ptr,".bmp")) == 0){
+            encInfo->dest_image_fname=argv[4];
+        }
+        else{
+            return e_failure;
+        }
+    }
+
+    return e_success;
 }
 
-Status open_files(EncodeInfo *encInfo)
-{
+Status open_files(EncodeInfo *encInfo){
     // Src Image file
     encInfo->fptr_src_image = fopen(encInfo->src_image_fname, "r");
     // Do Error handling
@@ -85,50 +112,40 @@ Status open_files(EncodeInfo *encInfo)
     return e_success;
 }
 
-Status check_capacity(EncodeInfo *encInfo)
-{
+Status check_capacity(EncodeInfo *encInfo){
     
 }
 
-Status copy_bmp_header(FILE *fptr_src_image, FILE *fptr_dest_image)
-{
+Status copy_bmp_header(FILE *fptr_src_image, FILE *fptr_dest_image){
     
 }
-Status encode_magic_string(const char *magic_string, EncodeInfo *encInfo)
-{
+Status encode_magic_string(const char *magic_string, EncodeInfo *encInfo){
     
 }
-Status encode_secret_file_extn_size(int size, EncodeInfo *encInfo)
-{
+Status encode_secret_file_extn_size(int size, EncodeInfo *encInfo){
   
 }
 
-Status encode_secret_file_extn(const char *file_extn, EncodeInfo *encInfo)
-{
+Status encode_secret_file_extn(const char *file_extn, EncodeInfo *encInfo){
    
 }
 
-Status encode_secret_file_size(long file_size, EncodeInfo *encInfo)
-{
+Status encode_secret_file_size(long file_size, EncodeInfo *encInfo){
     
 }
 
-Status encode_secret_file_data(EncodeInfo *encInfo)
-{
+Status encode_secret_file_data(EncodeInfo *encInfo){
 
 }
 
-Status encode_byte_to_lsb(char data, char *image_buffer)
-{
+Status encode_byte_to_lsb(char data, char *image_buffer){
    
 }
 
-Status encode_size_to_lsb(int size, char *imageBuffer)
-{
+Status encode_size_to_lsb(int size, char *imageBuffer){
   
 }
 
-Status do_encoding(EncodeInfo *encInfo)
-{
+Status do_encoding(EncodeInfo *encInfo){
   
 }

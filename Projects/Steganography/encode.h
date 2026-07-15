@@ -11,8 +11,7 @@
  * also stored
  */
 
-typedef struct _EncodeInfo
-{
+typedef struct _EncodeInfo{
     /* Source Image info */
     char *src_image_fname; // To store the src image name
     FILE *fptr_src_image;  // To store the address of the src image
