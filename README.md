@@ -202,6 +202,7 @@ gcc filename.c -o output
 15. Math
 
 01-WAP to reverse only the first and last digit of a number.
+02-WAP to bla blah
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 16. 2D Arrays
