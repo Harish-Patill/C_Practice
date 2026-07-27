@@ -40,3 +40,18 @@ int main(){
 
 	return 0;
 }
+
+
+/*	anothe optimal way to add the secodn array elements--->
+
+int arr[size1+size2];
+for(int i=0;i<size1;i++){					//first array elements
+	arr[i]=arr1[i];
+}
+for(int i=0;i<size2;i++){				//second array elements
+	arr[i+size1]=arr2[i];
+}
+
+
+
+*/

@@ -21,7 +21,7 @@ int main(){
         scanf("%d",&arr[i]);
     }
 
-    printf("The Smallest element from the array: %d\n",smallest_element(arr,size));
+    printf("The Smallest element from the array: %d\n",smallest_element(arr,size));         // will print the smallest element from the array
 
     return 0;
 }

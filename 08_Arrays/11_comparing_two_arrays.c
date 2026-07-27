@@ -15,25 +15,25 @@ int main(){
 	int size1=0;
 	int size2=0;
 
-	printf("Enter array 1 size: ");
+	printf("Enter array 1 size: ");													// size1
 	scanf("%d",&size1);
 	int arr1[size1];
 	
-	printf("Enter array elemnts: ");
+	printf("Enter array elemnts: ");												// array1 elements	
 	for(int i=0;i<size1;i++){
 		scanf("%d",&arr1[i]);
 	}
 	
-	printf("Enter array 2 size: ");
+	printf("Enter array 2 size: ");													// size2
 	scanf("%d",&size2);
 	int arr2[size2];
 	
-	printf("Enter array elemnts: ");
+	printf("Enter array elemnts: ");												// array2 elements
 	for(int i=0;i<size2;i++){
 		scanf("%d",&arr2[i]);
 	}
 
-	if(size1 != size2){
+	if(size1 != size2){																// initial check
 		printf("Both the array's are Not Equal\n");
 		return 0;
 	}

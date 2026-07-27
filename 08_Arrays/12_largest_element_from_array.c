@@ -21,7 +21,7 @@ int main(){
         scanf("%d",&arr[i]);
     }
 
-    printf("The Largest element from the array: %d\n",largest_element(arr,size));
+    printf("The Largest element from the array: %d\n",largest_element(arr,size));       // will print the largest element from the array
 
     return 0;
 }

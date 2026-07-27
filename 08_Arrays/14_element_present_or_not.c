@@ -26,12 +26,12 @@ int main(){
     printf("Enter the element you want to search: ");
     scanf("%d",&element);
 
-    if(finding_element(arr,size,element)){
+    if(finding_element(arr,size,element)){                          // will be executed if function returns 1;
         printf("%d is Present in the array.\n",element);
+        return 0;
     }
-    else{
-        printf("%d is Not Present in the array\n",element);
-    }
+    printf("%d is Not Present in the array\n",element);
+        
     
     return 0;
 }
