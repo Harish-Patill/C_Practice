@@ -1,29 +1,30 @@
 #include<stdio.h>
-void array_copying(int arr[],int new_array[], int size){
+
+void copy_elements_to_new_array(int arr[],int new_arr[],int size){
     for(int i=0;i<size;i++){
-        new_array[i]=arr[i];
+        new_arr[i]=arr[i];
     }
 }
 
 int main(){
     int size=0;
-    printf("Size: ");
+    printf("Enter size: ");
     scanf("%d",&size);
 
     int arr[size];
-    int new_array[size];
-
-    printf("Enter the array elements: ");
+    printf("Enter array elements: ");
     for(int i=0;i<size;i++){
         scanf("%d",&arr[i]);
     }
     
-    array_copying(arr,new_array,size);
-    printf("The new array elements  : ");
+    int new_arr[size];
+    copy_elements_to_new_array(arr,new_arr,size);
+    
+    printf("New array elements: ");
     for(int i=0;i<size;i++){
-        printf("%d ",new_array[i]);
+        printf("%d ",new_arr[i]);
     }
     printf("\n");
-    
+
     return 0;
 }
