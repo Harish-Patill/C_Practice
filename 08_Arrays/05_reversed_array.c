@@ -1,15 +1,19 @@
 #include<stdio.h>
-void array_swap(int arr[],int size){
+
+void reverse_array(int arr[],int size){
+    int temp=0;
+
     for(int i=0;i<size/2;i++){
-        int temp=arr[i];
-        arr[i]=arr[size-i-1];
+        temp=arr[i];
+        arr[i]=arr[size-1-i];
         arr[size-i-1]=temp;
     }
 }
 
+
 int main(){
     int size=0;
-    printf("Size: ");
+    printf("Enter size: ");
     scanf("%d",&size);
 
     int arr[size];
@@ -18,12 +22,14 @@ int main(){
         scanf("%d",&arr[i]);
     }
     
-    array_swap(arr,size);
-    printf("Reversed array elements: ");
+    reverse_array(arr,size);
+    
+    printf("Array elements after reversing the array: ");
     for(int i=0;i<size;i++){
         printf("%d ",arr[i]);
     }
     printf("\n");
+    
 
     return 0;
 }

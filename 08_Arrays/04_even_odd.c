@@ -1,5 +1,6 @@
 #include<stdio.h>
-void array_even(int arr[],int size){
+
+void even_elements(int arr[],int size){
     for(int i=0;i<size;i++){
         if(arr[i]%2 == 0){
             printf("%d ",arr[i]);
@@ -7,14 +8,14 @@ void array_even(int arr[],int size){
     }
 }
 
-void array_odd(int arr[],int size){
+void odd_elements(int arr[],int size){
     for(int i=0;i<size;i++){
         if(arr[i]%2 != 0){
             printf("%d ",arr[i]);
         }
     }
-
 }
+
 
 int main(){
     int size=0;
@@ -22,17 +23,17 @@ int main(){
     scanf("%d",&size);
 
     int arr[size];
-    printf("Enter the array size: ");
+    printf("Enter array elements: ");
     for(int i=0;i<size;i++){
         scanf("%d",&arr[i]);
     }
 
-    printf("Even elements from the array : ");
-    array_even(arr,size);
+    printf("Even elements from the array: ");
+    even_elements(arr,size);
     printf("\n");
     
-    printf("Odd elements from the array  : ");
-    array_odd(arr,size);
+    printf(" Odd elements from the array: ");
+    odd_elements(arr,size);
     printf("\n");
 
     return 0;
