@@ -2,12 +2,12 @@
 
 int equilibrium_index(int arr[], int size){
     int total_sum = 0;
-    for(int i = 0; i < size; i++){
+    for(int i=0;i<size;i++){
         total_sum=total_sum + arr[i];
     }
 
     int left_sum = 0;
-    for(int i = 0; i < size; i++){
+    for(int i=0;i<size;i++){
         int right_sum=total_sum - left_sum - arr[i];
 
         if(left_sum == right_sum){
