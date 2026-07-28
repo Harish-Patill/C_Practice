@@ -124,6 +124,11 @@ gcc filename.c -o output
 25-WAP to find the equilibrium index of an array.
 26-WAP to find Maximum sum sub-array (Kadane's Algorithm)
 27-WAP to remove duplicate elements from an array by modifying the original array.
+28-WAP to read two sorted arrays arr1 and arr2 of sizes m and n respectively. Merge both arrays into a third array arr3 such that:
+    --arr3 is in sorted order.
+    --Each element appears only once in arr3, even if it occurs multiple times within the same array or in both arrays.
+    --Display the merged array after removing all duplicate elements.
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 9. Functions
