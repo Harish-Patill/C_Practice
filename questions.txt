@@ -71,7 +71,7 @@
 01-WAP to read and write array elements.
 02-WAP to find the sum and average of array elements.
 03-WAP to find the minimum and maximum in an array.
-04-WAP to separate even and odd numbers in an array.
+04-WAP to separately print even and odd numbers from an array.
 05-WAP to reverse an array.
 06-WAP to check if an array is a palindrome.
 07-WAP to perform selection sort.
