@@ -221,6 +221,11 @@ gcc filename.c -o output
 07-WAP to print the upper right 2d array elements.
 08-WAP to modify the original array and replace it with its transpose.
 -----------------------------------------------------------------------------------------------------------------------------------------
+17. Games
+
+01-WAP to implement the Cow and Bull game.
+02-WAP to implement the tic-tac-toe game for 3x3 size.
+-----------------------------------------------------------------------------------------------------------------------------------------
 Projects
 
 01-Address Book : (Status - Completed)
