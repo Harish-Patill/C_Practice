@@ -38,7 +38,7 @@ int main(){
     for(int i=0;i<size2;i++){
         scanf("%d",&arr2[i]);
     }
-
+    
     int count=0;
     int arr3[size1+size2];
     for(int i=0;i<size1;i++){
