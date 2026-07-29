@@ -128,7 +128,7 @@ gcc filename.c -o output
     --arr3 is in sorted order.
     --Each element appears only once in arr3, even if it occurs multiple times within the same array or in both arrays.
     --Display the merged array after removing all duplicate elements.
-
+29-WAP to find the smallest missing positive integer from an array.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 9. Functions
