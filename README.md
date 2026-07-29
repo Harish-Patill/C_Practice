@@ -225,6 +225,7 @@ gcc filename.c -o output
 
 01-WAP to implement the Cow and Bull game.
 02-WAP to implement the tic-tac-toe game for 3x3 size.
+03-WAP to implement the 9x9 Sudoko Solution.
 -----------------------------------------------------------------------------------------------------------------------------------------
 Projects
 
