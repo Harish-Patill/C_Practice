@@ -187,8 +187,14 @@
 15. Math
 
 01-WAP to reverse only the first and last digit of a number.
-02-WAP to bla blah
-
+02-WAP to find GCD(greatest common divisor) of two numbers.
+03-WAP to Find pairs in an array whose sum equals a target (TwoSum)
+04-WAP to Find the sum of even digits in a number
+05-WAP to Get the bit value at the Nth position of a number
+06-WAP to repeat the even-digit sum until a single digit remains
+07-WAP to Convert decimal to binary, octal and hexadecimal
+08-WAP to print binary of a decimal number and its reverse
+09-WAP to Convert num to binary, reverse it, convert back and print the last digit of num.
 -----------------------------------------------------------------------------------------------------------------------------------------
 16. 2D Arrays
 
