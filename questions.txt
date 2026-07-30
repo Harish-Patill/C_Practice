@@ -198,6 +198,12 @@
 02-WAP to implement the tic-tac-toe game for 3x3 size.
 03-WAP to implement the 9x9 Sudoko Solution.
 -----------------------------------------------------------------------------------------------------------------------------------------
+18 Time/clock 
+
+01-WAP to Convert AM/PM time to 24-hour format.
+02-WAP to find the difference between two times.
+
+-----------------------------------------------------------------------------------------------------------------------------------------
 Projects
 
 01-Address Book : (Status - Completed)
