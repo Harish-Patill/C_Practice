@@ -1,6 +1,6 @@
 #include<stdio.h>
 int factorial(int a){
-    if(a == 0) return 1;                //returns 1 when a reaches 0;
+    if(a == 0 || a == 1) return 1;                //returns 1 when a reaches 0;
     return factorial(a-1)*a;           //does this logic >> factorial of 5 is >>factorial(4)*5.. and continues;
 }
 
@@ -19,3 +19,6 @@ int main(){
 
 // Enter the num: 3
 // The factorial of 3 is 6
+
+// Enter the num: 5
+// The factorial of 5 is 120
