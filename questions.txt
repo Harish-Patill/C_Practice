@@ -183,6 +183,9 @@
 17-WAP to check if a number is a power of two.
 18-WAP to find the number of bit swaps required to convert num1 to num2.
 19-WAP to swap the nibbles of a byte.
+20-WAP to check if set-bit count is even, reverse the bits; if odd, print that it is odd
+21-WAP to count the consecutive 1's
+22-WAP to check the maximum consecutive's of 1.
 -----------------------------------------------------------------------------------------------------------------------------------------
 15. Math
 
