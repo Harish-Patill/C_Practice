@@ -155,6 +155,9 @@ gcc filename.c -o output
 10-WAP to reverse an array.
 11-WAP to find the nth Fibonacci number using recursion.
 12-WAP to calculate the total number of ways to climb stairs when the user can take either 1 or 2 steps at a time.
+13-WAP to check Armstrong number using recursion
+14-WAP to perform the Tower of Hanoi
+15-WAP to reverse a num(in decimal) then print the reversed decimal in binary
 -----------------------------------------------------------------------------------------------------------------------------------------
 12. Strings
 
@@ -212,12 +215,21 @@ gcc filename.c -o output
 17-WAP to check if a number is a power of two.
 18-WAP to find the number of bit swaps required to convert num1 to num2.
 19-WAP to swap the nibbles of a byte.
+20-WAP to check if set-bit count is even, reverse the bits; if odd, print that it is odd
+21-WAP to count the consecutive 1's
+22-WAP to check the maximum consecutive's of 1.
 -----------------------------------------------------------------------------------------------------------------------------------------
 15. Math
 
 01-WAP to reverse only the first and last digit of a number.
-02-WAP to bla blah
-
+02-WAP to find GCD(greatest common divisor) of two numbers.
+03-WAP to Find pairs in an array whose sum equals a target (TwoSum)
+04-WAP to Find the sum of even digits in a number
+05-WAP to Get the bit value at the Nth position of a number
+06-WAP to repeat the even-digit sum until a single digit remains
+07-WAP to Convert decimal to binary, octal and hexadecimal
+08-WAP to print binary of a decimal number and its reverse
+09-WAP to Convert num to binary, reverse it, convert back and print the last digit of num.
 -----------------------------------------------------------------------------------------------------------------------------------------
 16. 2D Arrays
 
