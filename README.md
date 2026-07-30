@@ -182,7 +182,16 @@ gcc filename.c -o output
 22-WAP to replace a word in a string with a word from another string.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
-13. Bitwise Operators
+13. Structures
+
+01-Basic Structure input and output.
+02-WAP to Sort car structures by Year of Manufacture (YOM)
+03-WAP to Find the difference in years using a structure
+04-WAP to find Sum of complex numbers using structure
+05-WAP to find Time difference between two times using structure
+06-WAP to find the volume and surface area of a box.
+-----------------------------------------------------------------------------------------------------------------------------------------
+14. Bitwise Operators
 
 01-WAP to set the nth bit of a number.
 02-WAP to clear the nth bit of a number.
@@ -226,6 +235,12 @@ gcc filename.c -o output
 01-WAP to implement the Cow and Bull game.
 02-WAP to implement the tic-tac-toe game for 3x3 size.
 03-WAP to implement the 9x9 Sudoko Solution.
+-----------------------------------------------------------------------------------------------------------------------------------------
+18 Time/clock 
+
+01-WAP to Convert AM/PM time to 24-hour format.
+02-WAP to find the difference between two times.
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 Projects
 
