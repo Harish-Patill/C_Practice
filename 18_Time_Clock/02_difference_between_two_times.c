@@ -17,10 +17,10 @@ int main(){
         diff += 24 * 60;   // wrap around midnight if needed
     }
     
-    int diffH = diff / 60;
-    int diffM = diff % 60;
+    int diff_Hour = diff / 60;
+    int diff_Min = diff % 60;
 
-    printf("Difference: %02d:%02d\n", diffH, diffM);
+    printf("Difference: %02d:%02d\n", diff_Hour, diff_Min);
 
     return 0;
 }
