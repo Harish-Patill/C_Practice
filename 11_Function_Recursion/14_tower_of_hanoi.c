@@ -1,8 +1,8 @@
 // #include <stdio.h>
 
-// from to aux
-// from aux to
-// aux to from
+// // from to aux
+// // from aux to
+// // aux to from
 // void towerOfHanoi(int num, char from, char to, char aux) {
 //     if (num == 0) return;   // base case: nothing to move
 
