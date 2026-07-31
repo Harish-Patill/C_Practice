@@ -241,6 +241,8 @@ gcc filename.c -o output
 06-WAP to find common numbers present in all rows of a 2D array.
 07-WAP to print the upper right 2d array elements.
 08-WAP to modify the original array and replace it with its transpose.
+09-WAP to Transpose a matrix with a missing element
+10-WAP to print matrix in spiral order
 -----------------------------------------------------------------------------------------------------------------------------------------
 17. Games
 
