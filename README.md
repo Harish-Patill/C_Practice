@@ -88,6 +88,8 @@ gcc filename.c -o output
     1. Star Patterns
         01-Simple triangle.
         02-Inverted triangle.
+    4. Randoms
+        01-Print palindrome numbers between 100 and 200
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 7. While Loops
