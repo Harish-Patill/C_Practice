@@ -30,3 +30,15 @@ int main(){
     
     return 0;
 }
+
+
+// Enter row: 3
+// Enter column: 3
+// Enter array elements:
+// 1 2 3
+// 4 5 6
+// 7 8 9
+// The array elements are:
+//  1 2 3
+//    5 6
+//      9

@@ -43,6 +43,6 @@ int main(){
 
     return 0;
 }
-
+// arr = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
 // The maximum sub array is   = 6
 // The sub array elements are = 4 -1 2 1 

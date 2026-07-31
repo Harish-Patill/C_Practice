@@ -57,3 +57,56 @@ int main(){
 
     return 0;
 }
+
+
+
+// #include <stdio.h>
+
+// int existsInRow(int col, int arr[], int value) {
+//     for (int j = 0; j < col; j++) {
+//         if (arr[j] == value) return 1;
+//     }
+//     return 0;
+// }
+
+// void common_row_element(int row, int col, int arr[][col]) {
+//     for (int j = 0; j < col; j++) {
+//         int candidate = arr[0][j];
+//         int found_in_all_rows = 1;
+
+//         for (int i = 1; i < row; i++) {
+//             if (!existsInRow(col, arr[i], candidate)) {
+//                 found_in_all_rows = 0;
+//                 break;
+//             }
+//         }
+
+//         if (found_in_all_rows) {
+//             printf("%d ", candidate);
+//         }
+//     }
+//     printf("\n");
+// }
+
+// int main() {
+//     int row = 0, col = 0;
+
+//     printf("Row: ");
+//     scanf("%d", &row);
+
+//     printf("Col: ");
+//     scanf("%d", &col);
+
+//     int arr[row][col];
+//     printf("Enter array elements:\n");
+//     for (int i = 0; i < row; i++) {
+//         for (int j = 0; j < col; j++) {
+//             scanf("%d", &arr[i][j]);
+//         }
+//     }
+
+//     printf("Common elements in all rows: ");
+//     common_row_element(row, col, arr);
+
+//     return 0;
+// }

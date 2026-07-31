@@ -47,3 +47,22 @@ int main(){
     
     return 0;
 }
+
+
+// Row: 3
+// Col: 3
+
+// Enter array elements:
+// 1 2 3
+// 4 5 6
+// 7 8 9
+
+// Row elements sum:
+// 0 row: 6
+// 1 row: 15
+// 2 row: 
+
+// Col elements sum:
+// 0 col: 12
+// 1 col: 15
+// 2 col: 18
