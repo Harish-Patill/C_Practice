@@ -22,7 +22,7 @@ int main(){
         difference--;
     }
 
-    printf("Difference between %d/%d/%d and %d/%d/%d is: %d years\n",d1.day,d1.month,d1.year,d2.day,d2.month,d2.year,difference);
+    printf("Difference between %d/%d/%d and %d/%d/%d is: %d years\n",d1.day,d1.month,d1.year,   d2.day,d2.month,d2.year,    difference);
 
     return 0;
 }
