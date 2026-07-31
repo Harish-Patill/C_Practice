@@ -31,12 +31,13 @@ int main(){
     qsort(arr, size, sizeof(int), compare);
     int expected = 1;
     
-    for (int i = 0; i < size; i++){
-        if (arr[i] <= 0)
+    for (int i=0;i<size;i++){
+        if (arr[i]<=0)
         continue;          // Ignore negatives and 0
         
-        if (arr[i] == expected)
-        expected++;         // Found the expected number 
+        if(arr[i]==expected){
+            expected++;        
+        }                   // Found the expected number 
                             // Duplicates are automatically ignored because
                             // if arr[i] < expected, nothing happens.
     }
