@@ -43,3 +43,71 @@ int main(){
     }
     printf("\n");
 }
+
+
+// #include<stdio.h>
+// int main(){
+//     char str[100];
+
+//     printf("Enter the string: ");
+//     scanf("%[^\n]",str);
+
+//     int len=0;
+//     while(str[len]!='\0'){
+//         len++;
+//     }
+    
+//     int start=0, end;
+//     for(int i=0; i<=len; i++){
+//         if(str[i]==' ' || str[i]=='\0'){
+            
+//             end=i-1;
+
+//             while(start<end){
+//                 char temp=str[start];
+//                 str[start]=str[end];
+//                 str[end]=temp;
+
+//                 start++;
+//                 end--;
+//             }
+//             start=i+1;
+//         }
+//     }
+//     printf("Reverse words: %s\n",str);
+// }
+
+
+#include<stdio.h>
+void reverseEach_word(char str[]){
+    int start=0,end=0;
+
+    while(1){
+        if(str[end]==' ' || str[end]=='\0'){
+            int left=start;
+            int right=end-1;
+
+            while(left<right){
+                char temp=str[left];
+                str[left]=str[right];
+                str[right]=temp;
+
+                left++;
+                right--;
+            }
+            if(str[end]=='\0')
+            break;
+
+            start=end+1;
+        }
+        end++;
+    }
+}
+int main(){
+    char str[100];
+    printf("Enter the string: ");
+    scanf("%[^\n]",str);
+
+    reverseEach_word(str);
+    printf("%s",str);
+}

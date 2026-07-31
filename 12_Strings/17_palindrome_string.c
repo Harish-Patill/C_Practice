@@ -14,12 +14,13 @@ int main(){
     while(first<last){
         if(word[first] != word[last-1]){
             flag=1;
+            break;
         }
         first++;
         last--;
     }
 
-    if(flag==1) printf("Not a Palindrome\n");
+    if(flag) printf("Not a Palindrome\n");
     else printf("Is an Palindrome\n");
 
     return 0;
