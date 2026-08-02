@@ -224,6 +224,7 @@ gcc filename.c -o output
 21-WAP to count the consecutive 1's
 22-WAP to check the maximum consecutive's of 1.
 23-WAP to check if a number's binary is palindrome or not.
+24-WAP to check if a numbers binary has adjacent 1's innit;
 -----------------------------------------------------------------------------------------------------------------------------------------
 15. Math
 
@@ -253,6 +254,7 @@ gcc filename.c -o output
 11-WAP to replace the matrix's elements with the next prime number, ignore a element if it already is prime number.
 12-2Sum for the 2d arrays
 13-WAP to do the matrix multiplication of 2 2D-arrays
+14-WAP to check if a matrix is Toeplitz or not
 -----------------------------------------------------------------------------------------------------------------------------------------
 17. Games
 
