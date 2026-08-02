@@ -134,6 +134,9 @@ gcc filename.c -o output
     --Each element appears only once in arr3, even if it occurs multiple times within the same array or in both arrays.
     --Display the merged array after removing all duplicate elements.
 29-WAP to find the smallest missing positive integer from an array.
+30-Given an array, start at index 0 and read the value there. Jump forward in the array by that many positions. 
+   Keep repeating this reading the value at the new index and jumping forward by that amount while incrementing a counter each time. 
+   Find how many jumps (counts) it takes to reach or go past the end of the array.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 9. Functions
