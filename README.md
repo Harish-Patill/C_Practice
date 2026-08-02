@@ -88,8 +88,11 @@ gcc filename.c -o output
     1. Star Patterns
         01-Simple triangle.
         02-Inverted triangle.
-    4. Randoms
+    5. Randoms
         01-Print palindrome numbers between 100 and 200
+        02-Pascals triangle
+        03-WAP to print n number of Prime numbers
+        04-WAP to print palindrome numbers upto limit n.
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 7. While Loops
@@ -220,6 +223,7 @@ gcc filename.c -o output
 20-WAP to check if set-bit count is even, reverse the bits; if odd, print that it is odd
 21-WAP to count the consecutive 1's
 22-WAP to check the maximum consecutive's of 1.
+23-WAP to check if a number's binary is palindrome or not.
 -----------------------------------------------------------------------------------------------------------------------------------------
 15. Math
 
@@ -245,6 +249,9 @@ gcc filename.c -o output
 08-WAP to modify the original array and replace it with its transpose.
 09-WAP to Transpose a matrix with a missing element
 10-WAP to print matrix in spiral order
+11-WAP to replace the matrix's elements with the next prime number, ignore a element if it already is prime number.
+12-2_Sum for 2d arrays
+13-WAP to do the matrix multiplication of 2 2D-arrays
 -----------------------------------------------------------------------------------------------------------------------------------------
 17. Games
 
