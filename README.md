@@ -236,6 +236,7 @@ gcc filename.c -o output
 07-WAP to Convert decimal to binary, octal and hexadecimal
 08-WAP to print binary of a decimal number and its reverse
 09-WAP to Convert num to binary, reverse it, convert back and print the last digit of num.
+10-WAP to repace all the 0's from a num to 1
 -----------------------------------------------------------------------------------------------------------------------------------------
 16. 2D Arrays
 
