@@ -221,7 +221,7 @@
 09-WAP to Transpose a matrix with a missing element
 10-WAP to print matrix in spiral order
 11-WAP to replace the matrix's elements with the next prime number, ignore a element if it already is prime number.
-12-2_Sum for 2d arrays
+12-2Sum for the 2d arrays
 13-WAP to do the matrix multiplication of 2 2D-arrays
 -----------------------------------------------------------------------------------------------------------------------------------------
 17. Games
