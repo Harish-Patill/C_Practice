@@ -244,14 +244,5 @@
 -----------------------------------------------------------------------------------------------------------------------------------------
 Projects
 
-01-Address Book : (Status - Completed)
-
-    1. Add contacts             
-    2. Search contacts         
-    3. Edit contacts           
-    4. Delete contacts         
-    5. Display contacts        
-    6. Save and Exit           
-    7. Exit                     
-
-02-Steaganography : Initialized
+01-Address Book                    
+02-Steaganography

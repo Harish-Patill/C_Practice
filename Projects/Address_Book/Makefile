@@ -1,19 +1,19 @@
-# label
-addressbook : main.o functions.o
-	gcc main.o functions.o -o addressbook
-main.o: main.c project_header.h
-	gcc -c main.c
-functions.o: functions.c project_header.h
-	gcc -c functions.c
-clean:
-	rm -f *.out *.o
-
-
-# OBJ := $(patsubst %.c, %.o, $(wildcard*.c))
-# hari.out: $(OBJ)
-# 	gcc -o $@ $^
+# # label
+# addressbook : main.o functions.o
+# 	gcc main.o functions.o -o harish
+# main.o: main.c project_header.h
+# 	gcc -c main.c
+# functions.o: functions.c project_header.h
+# 	gcc -c functions.c
 # clean:
-# 	rm *.out *.o
+# 	rm -f *.out *.o
+
+
+OBJ :=$(patsubst %.c, %.o, $(wildcard *.c))
+ajay.out: $(OBJ)
+	gcc -o $@ $^
+clean:
+	rm *.out *.o
 
 # addressbook: main.o functions.o
 # 	gcc main.o functions.o -o addressbook
