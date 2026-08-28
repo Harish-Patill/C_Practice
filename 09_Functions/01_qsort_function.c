@@ -2,11 +2,9 @@
 #include<stdlib.h>
 
 int compare(const void *a,const void *b){
-    int x=*(int *)a;
-    int y=*(int *)b;
-
-    return x-y;     // to sort in ascending order 
-    return y-x;     // to sort in descending order  
+    return (*(int *)a)-(*(int *)b);         // to sort in ascending order 
+//  return (*(int *)b)-(*(int *)a);         // to sort in descending order  
+    
 }
 
 int main(){
