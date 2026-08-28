@@ -142,6 +142,7 @@ gcc filename.c -o output
 9. Functions
 
 01-WAP to implement the qsort function to sort an array in ascending or descending order
+02-WAP to implement the qsort function to sort an 2D-Array 
 -----------------------------------------------------------------------------------------------------------------------------------------
 10. Pointers
 
