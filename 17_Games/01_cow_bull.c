@@ -1,4 +1,4 @@
-// Bull =same digit in both strings at same position (Right place)
+// Bull= same digit in both strings at same position (Right place)
 // Cow = same digit in the other string, just at different position (Wrong place)
 
     // S1 = 1234

@@ -5,7 +5,7 @@ int main(){
     scanf("%d",&num);
 
     if(num<0){
-        printf("The absolute value of %d is %d\n",num,num-(2*num));
+        printf("The absolute value of %d is %d\n",num,num*-1);
     }
     else
         printf("The absolute value of %d is %d\n",num,num);
