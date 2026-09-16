@@ -3,7 +3,7 @@ Doing my C Programming and Github practice in this repo.
 
 ---
 
-## How to Run
+### How to Run
 Install GCC Compiler from [here](https://sourceforge.net/projects/mingw/) and to verify run:
 ```bash
 gcc --version
@@ -16,7 +16,7 @@ gcc filename.c -o output
 
 ---
 
-## My Compiler and Operating system
+### My Compiler and Operating system
 - GCC compiler version: 13.3.0
 - Linux-Ubuntu 24.04.4 LTS 
 - Windows 11
